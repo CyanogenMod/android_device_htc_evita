@@ -1,8 +1,8 @@
 #
-# system.prop for ville
+# system.prop for evita
 #
 
-ro.sf.lcd_density=240
+ro.sf.lcd_density=320
 
 # RIL properties
 mobiledata.interfaces=rmnet0,rmnet1
