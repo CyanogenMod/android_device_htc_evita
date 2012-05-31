@@ -1,0 +1,5 @@
+AVRCP.kl
+h2w_headset.kl
+keypad_8960.kl
+msm8960-snd-card_Button_Jack.kl
+synaptics-rmi-touchscreen.kl

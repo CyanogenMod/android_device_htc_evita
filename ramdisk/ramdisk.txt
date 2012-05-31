@@ -1,0 +1,9 @@
+init.qcom.sh
+init.qcom.rc
+init.target.rc
+init.goldfish.rc
+init.rc
+init.elite.rc
+init.usb.rc
+ueventd.rc
+ueventd.goldfish.rc
