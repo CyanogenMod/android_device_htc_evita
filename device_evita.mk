@@ -111,11 +111,11 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    alsa.msm8960 \
+    #alsa.msm8960 \
     audio.a2dp.default \
     audio_policy.msm8960 \
     audio.primary.msm8960 \
-    libalsa-intf \
+    #libalsa-intf \
     libaudioutils \
 		Apollo
 
@@ -127,7 +127,7 @@ PRODUCT_PACKAGES += \
     libgenlock \
     libmemalloc \
     liboverlay \
-    libQcomUI \
+    #libQcomUI \
     libtilerenderer
 
 # GPS
@@ -188,10 +188,10 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/modules/htc_sqos_ctrlmsg.ko:/system/lib/modules/htc_sqos_ctrlmsg.ko \
     device/htc/evita/modules/htc_sqos_encoder.ko:/system/lib/modules/htc_sqos_encoder.ko \
     device/htc/evita/modules/htc_sqos_wifi.ko:/system/lib/modules/htc_sqos_wifi.ko \
-    device/htc/evita/modules/kineto_gan.ko:/system/lib/modules/kineto_gan.ko \
+    #device/htc/evita/modules/kineto_gan.ko:/system/lib/modules/kineto_gan.ko \
     device/htc/evita/modules/lcd.ko:/system/lib/modules/lcd.ko \
     device/htc/evita/modules/msm-buspm-dev.ko:/system/lib/modules/msm-buspm-dev.ko \
-    device/htc/evita/modules/oprofile.ko:/system/lib/modules/oprofile.ko \
+    #device/htc/evita/modules/oprofile.ko:/system/lib/modules/oprofile.ko \
     device/htc/evita/modules/prima_wlan.ko:/system/lib/modules/prima_wlan.ko \
     device/htc/evita/modules/qce40.ko:/system/lib/modules/qce40.ko \
     device/htc/evita/modules/qcedev.ko:/system/lib/modules/qcedev.ko \
@@ -252,11 +252,11 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 PRODUCT_LOCALES += en_US hdpi
-PRODUCT_VERSION_DEVICE_SPECIFIC=-alpha7.1
+PRODUCT_VERSION_DEVICE_SPECIFIC=-alpha0.1
 
 # For RomManager
 ADDITIONAL_BUILD_PROPERTIES += \
-		ro.rommanager.developerid=xkonni
+		ro.rommanager.developerid=socaldevs
 
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/htc/evita/evita-vendor.mk)
