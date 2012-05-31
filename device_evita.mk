@@ -43,13 +43,6 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/configs/init.qcom.wcnss_links.sh:/system/etc/init.qcom.wcnss_links.sh \
     device/htc/evita/configs/init.qcom.wifi.sh:/system/etc/init.qcom.wifi.sh
 
-# recovery and custom charging
-PRODUCT_COPY_FILES += \
-    device/htc/evita/recovery/sbin/choice_fn:recovery/root/sbin/choice_fn \
-    device/htc/evita/recovery/sbin/power_test:recovery/root/sbin/power_test \
-    device/htc/evita/recovery/sbin/offmode_charging:recovery/root/sbin/offmode_charging \
-    device/htc/evita/recovery/sbin/detect_key:recovery/root/sbin/detect_key
-
 # GPS config
 PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/gps.conf
 
