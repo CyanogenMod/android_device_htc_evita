@@ -1,7 +1,7 @@
 android_device_htc_ville
 ========================
 
-Android device tree for HTC Ville (One S)
+Android device tree for HTC One XL (evita)
 
 Build requirements:
 * external/wpa_supplicant, branch ics-ville
