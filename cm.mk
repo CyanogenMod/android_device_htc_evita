@@ -8,7 +8,7 @@ PRODUCT_RELEASE_NAME := evita
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/htc/ville/device_ville.mk)
+$(call inherit-product, device/htc/evita/device_evita.mk)
 
 # Device naming
 PRODUCT_DEVICE := evita
