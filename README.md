@@ -1,24 +1,11 @@
-android_device_htc_ville
+android_device_htc_evita
 ========================
 
 Android device tree for HTC One XL (evita)
 
 Build requirements:
-* external/wpa_supplicant, branch ics-ville
-* framework/base, branch ics-ville
-* hardware/alsa_sound, branch ics-chocolate
-* vendor/qcom/opensource/kernel-tests/libalsa-intf, branch ics-chocolate
+* hardware/alsa_sound, branch ics
+* hardware/qcom/display, branch ics
+* vendor/qcom/opensource/omx/mm-audio, branch ics
+* vendor/qcom/opensource/omx/mm-video, branch ics
 
-Working:
-* Bluetooth
-* Camera
-* Radio
-* Sound
-* Wifi
-
-Known issues:
-* Data state changes may not always acquire IP via DHCP
-* LPA volume is ridiculously high
-* Wifi tethering does not work
-* Wifi calling not available
-* Camcorder does not initialize properly
