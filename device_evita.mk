@@ -111,11 +111,11 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    #alsa.msm8960 \
+    alsa.msm8960 \
     audio.a2dp.default \
     audio_policy.msm8960 \
     audio.primary.msm8960 \
-    #libalsa-intf \
+    libalsa-intf \
     libaudioutils \
 		Apollo
 
@@ -127,7 +127,7 @@ PRODUCT_PACKAGES += \
     libgenlock \
     libmemalloc \
     liboverlay \
-    #libQcomUI \
+    libQcomUI \
     libtilerenderer
 
 # GPS
@@ -262,4 +262,4 @@ ADDITIONAL_BUILD_PROPERTIES += \
 $(call inherit-product-if-exists, vendor/htc/evita/evita-vendor.mk)
 
 # call dalvik heap config
-$(call inherit-product, frameworks/base/build/phone-xhdpi-1024-dalvik-heap.mk)
+$(call inherit-product-if-exists, frameworks/base/build/phone-xhdpi-1024-dalvik-heap.mk)
