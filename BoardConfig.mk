@@ -120,8 +120,8 @@ WIFI_DRIVER_MODULE_NAME          := prima_wlan
 WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/prima_wlan.ko"
 
 # Webkit
-#TARGET_FORCE_CPU_UPLOAD := true
-#DYNAMIC_SHARED_LIBV8SO := true
+TARGET_FORCE_CPU_UPLOAD := true
+DYNAMIC_SHARED_LIBV8SO := true
 
 # cat /proc/emmc
 #dev:        size     erasesize name
