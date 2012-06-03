@@ -30,7 +30,8 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/ramdisk/init.elite.rc:root/init.elite.rc \
     device/htc/evita/ramdisk/init.usb.rc:root/init.usb.rc \
     device/htc/evita/ramdisk/ueventd.rc:root/ueventd.rc \
-    device/htc/evita/ramdisk/ueventd.goldfish.rc:root/ueventd.goldfish.rc 
+    device/htc/evita/ramdisk/ueventd.goldfish.rc:root/ueventd.goldfish.rc \
+    device/htc/evita/ramdisk/default.prop:root/default.prop
 
 # Qualcomm scripts
 PRODUCT_COPY_FILES += \
