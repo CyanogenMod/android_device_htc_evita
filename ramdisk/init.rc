@@ -1,6 +1,7 @@
 import init.usb.rc
 
 on early-init
+    #chmod 0000 /sys/board_properties/virtualkeys.synaptics-rmi-touchscreen
     # Set init and its forked children's oom_adj.
     write /proc/1/oom_adj -16
 
@@ -108,6 +109,9 @@ on fs
     mount yaffs2 mtd@cache /cache nosuid nodev
 
 on post-fs
+    #chmod 0444 /sys/board_properties/virtualkeys.synaptics-rmi-touchscreen
+    #rm /sys/board_properties/virtualkeys.synaptics-rmi-touchscreen
+    #symlink /sys/board_properties/virtualkeys.synaptics-rmi-touchscreen /system/usr/keylayout/virtualkeys.synaptics-rmi-touchscreen
     # once everything is setup, no need to modify /
     mount rootfs rootfs / ro remount
 
@@ -462,11 +466,6 @@ on property:vold.decrypt=trigger_shutdown_framework
     class_reset main
 
 ## Daemon processes to be run by init.
-##
-service wpa_supplicant /system/bin/wpa_supplicant -dd -Dwext -iwlan0 -c /system/etc/wifi/wpa_supplicant.conf
-    group system wifi inet
-    disabled
-    oneshot
 
 service ueventd /sbin/ueventd
     class core
