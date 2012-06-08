@@ -95,6 +95,11 @@ lib/libril.so
 
 # Sensors
 lib/hw/sensors.elite.so
+lib/libimu.so
+lib/libmllite.so
+lib/libmlplatform.so
+lib/libmpl.so
+lib/libmmparser.so
 
 # Webkit
 lib/libv8.so
