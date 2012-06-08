@@ -34,7 +34,8 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/ramdisk/init.usb.rc:root/init.usb.rc \
     device/htc/evita/ramdisk/ueventd.rc:root/ueventd.rc \
     device/htc/evita/ramdisk/ueventd.goldfish.rc:root/ueventd.goldfish.rc \
-    device/htc/evita/ramdisk/default.prop:root/default.prop
+    device/htc/evita/ramdisk/default.prop:root/default.prop \
+    device/htc/evita/ramdisk/sys/board_properties/virtualkeys.synaptics-rmi-touchscreen:root/sys/board_properties/virtualkeys.synatpics-rmi-touchscreen
 
 # Qualcomm scripts
 PRODUCT_COPY_FILES += \
@@ -184,6 +185,7 @@ PRODUCT_PACKAGES += \
 
 # Kernel modules
 PRODUCT_COPY_FILES += \
+    device/htc/evita/modules/prima_wlan.ko:/system/lib/modules/prima_wlan.ko \
     device/htc/evita/modules/ansi_cprng.ko:/system/lib/modules/ansi_cprng.ko \
     device/htc/evita/modules/cavm_sqos_mod.ko:/system/lib/modules/cavm_sqos_mod.ko \
     device/htc/evita/modules/dma_test.ko:/system/lib/modules/dma_test.ko \
