@@ -10,7 +10,7 @@ http://source.android.com/source/initializing.html
 
 To get the source:
 
-> repo init -u git://github.com:vmagro/android.git<br>
+> repo init -u git://github.com/vmagro/android.git -b ics<br>
 > repo sync -j4<br>
 
 To build
