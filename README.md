@@ -18,6 +18,8 @@ To build
 > repo sync -j4<br>
 > . build/envsetup.sh<br>
 > lunch cm_evita-userdebug<br>
+> cd vendor/cm
+> ./get-prebuilts
 > make -j4<br>
 
 To make a recovery flashable zip, run
