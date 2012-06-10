@@ -23,19 +23,11 @@ lib/libacdbloader.so
 lib/libaudcal.so
 
 # Camera
-lib/libchromatix_imx074_default_video.so
-lib/libchromatix_imx074_preview.so
-lib/libchromatix_imx105_hfr.so
-lib/libchromatix_imx105_zsl.so
 lib/libchromatix_s5k3h2yx_default_video.so
 lib/libchromatix_s5k3h2yx_hdr.so
 lib/libchromatix_s5k3h2yx_hfr.so
 lib/libchromatix_s5k3h2yx_preview.so
 lib/libchromatix_s5k3h2yx_zsl.so
-lib/libchromatix_s5k4e5yx_default_video.so
-lib/libchromatix_s5k4e5yx_hfr.so
-lib/libchromatix_s5k4e5yx_preview.so
-lib/libchromatix_s5k4e5yx_zsl.so
 lib/libchromatix_s5k6a1gx_default_video.so
 lib/libchromatix_s5k6a1gx_preview.so
 lib/libchromatix_s5k6a1gx_zsl.so
