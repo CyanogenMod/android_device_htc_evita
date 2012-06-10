@@ -198,6 +198,8 @@ on boot
     chown media media /sys/class/leds/green-camera/brightness
     chown system system /sys/devices/virtual/htc_accessory/fm/flag
     chown system system /sys/devices/virtual/htc_accessory/tty/flag
+
+    chmod 0666 /sys/class/leds/flashlight/brightness
 # HTC SSD Peripheral UI - END
 
 # HTC SSD Audio
