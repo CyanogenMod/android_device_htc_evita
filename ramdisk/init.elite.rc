@@ -24,6 +24,7 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
+
 on emmc
     mkdir /system
     mkdir /data 0771 system system
@@ -41,7 +42,7 @@ on emmc
     mkdir /vendor/firmware      0771 system system
 
 on init
-	# double check the perms and set owner
+    # double check the perms and set owner
     chown root root /devlog
 
     # for Invense MPU3050
@@ -158,9 +159,9 @@ on boot
     chown radio radio /dev/simlock
     chmod 0660 /dev/simlock
 
-	# Widevine DRM
-	chown drm system /dev/htcdrm
-	chmod 0660 /dev/htcdrm
+    # Widevine DRM
+    chown drm system /dev/htcdrm
+    chmod 0660 /dev/htcdrm
 
     chown system audio /dev/audience_a1028
     chmod 0660 /dev/audience_a1028
@@ -210,10 +211,10 @@ on boot
 # permissions for NFC
     chmod 0600 /dev/pn544
     chown nfc nfc /dev/pn544
-	setprop debug.nfc.fw_download "true"
-	setprop debug.nfc.fw_boot_download "false"
+    setprop debug.nfc.fw_download "true"
+    setprop debug.nfc.fw_boot_download "false"
 
-    #To allow interfaces to get v6 address when tethering is enabled
+    # To allow interfaces to get v6 address when tethering is enabled
     write /proc/sys/net/ipv6/conf/rmnet0/accept_ra 2
     write /proc/sys/net/ipv6/conf/rmnet1/accept_ra 2
     write /proc/sys/net/ipv6/conf/rmnet2/accept_ra 2
@@ -249,183 +250,21 @@ on boot
 
 # HTC SSD Battery - BEGIN
 # for RIL to notify battery driver talking and network search status
-	chown radio radio /sys/class/power_supply/battery/phone_call
-	chown radio radio /sys/class/power_supply/battery/network_search
-	chown system system /sys/class/power_supply/battery/navigation
+    chown radio radio /sys/class/power_supply/battery/phone_call
+    chown radio radio /sys/class/power_supply/battery/network_search
+    chown system system /sys/class/power_supply/battery/navigation
 # HTC SSD Battery - END
 
-# Export GPIO56 for fusion targets to enable/disable hub
-service usbhub_init /system/bin/usbhub_init
-   user root
-   disabled
-   oneshot
+# Services start here
 
-on property:ro.product.device=msm7630_fusion
-    start usbhub_init
-
-on property:init.svc.wpa_supplicant=stopped
-    stop dhcpcd
-
-on property:init.svc.bluetoothd=running
-    start btwlancoex
-    start amp_load
-
-on property:init.svc.bluetoothd=stopped
-    start amp_unload
-    stop btwlancoex
-
-on property:persist.cne.UseCne=none
-    stop cnd
-
-service zchgd_offmode /system/bin/zchgd -pseudooffmode
-    user root
-    group root graphics
+service abld /system/bin/mm-abl-daemon
     disabled
 
-service zchgd_onmode /system/bin/zchgd -onmode
-    user root
-    group root graphics
-    oneshot
-
-service cnd /system/bin/cnd
-    socket cnd stream 660 root radio
-
-service rmt_storage /system/bin/rmt_storage modem_st1 modem_st2 recovery radio_config
-    class core
-    user root
-    disabled
-
-on property:ro.emmc=1
-    start rmt_storage
-
-service dmagent /system/bin/dmagent -N
-    socket dmagent stream 660 root radio
-    user root
-    group radio cache inet misc
-
-# bugreport is triggered by the KEY_VOL-UP and KEY_VOL-DOWN keycodes
-service bugreport /system/bin/dumpstate -d -v -o /sdcard/bugreports/bugreport
-    disabled
-    oneshot
-    keycodes 114 115
-
-service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
-    user bluetooth
-    group qcom_oncrpc bluetooth net_bt_admin
-    disabled
-    oneshot
-
+service akmd /system/bin/akmd
+    user compass
+    group compass misc input
 
 service bt-dun /system/bin/dun-server /dev/smd7 /dev/rfcomm0
-    disabled
-    oneshot
-
-service bt-sap /system/bin/sapd 15
-    disabled
-    oneshot
-service sapd /system/bin/sdptool add --handle=0x1ff15 --channel=15 SAP
-    user bluetooth
-    group bluetooth net_bt_admin
-    disabled
-    oneshot
-service dund /system/bin/sdptool add --handle=0x1ff01 --channel=1 DUN
-    user bluetooth
-    group bluetooth net_bt_admin
-    disabled
-    oneshot
-
-service bridgemgrd /system/bin/bridgemgrd
-    user radio
-    group radio
-    disabled
-
-service port-bridge /system/bin/port-bridge /dev/smd0 /dev/ttyGS0
-    user system
-    group system inet
-    disabled
-
-on property:ro.baseband="msm"
-    start port-bridge
-    # Enable BT-DUN only for all msms
-    setprop ro.qualcomm.bluetooth.dun true
-
-on property:ro.baseband="unknown"
-    start port-bridge
-
-service qmiproxy /system/bin/qmiproxy
-    user radio
-    group radio
-    disabled
-
-service qmuxd /system/bin/qmuxd
-    user radio
-    group radio
-
-service netmgrd /system/bin/netmgrd
-
-service ipd /system/bin/ipd
-    socket ipd stream 666 root inet
-
-service sensors /system/bin/sensors.qcom
-    user root
-    group root
-    disabled
-
-on property:ro.use_data_netmgrd=false
-    # netmgr not supported on specific target
-    stop netmgrd
-
-# Adjust socket buffer to enlarge TCP receive window for high bandwidth
-# but only if ro.data.large_tcp_window_size property is set.
-on property:ro.data.large_tcp_window_size=true
-    write /proc/sys/net/ipv4/tcp_adv_win_scale  1
-
-service btwlancoex /system/bin/sh /system/etc/init.qcom.coex.sh
-    user shell
-    group bluetooth net_bt_admin
-    disabled
-    oneshot
-
-# for USB internet sharing
-service udhcpd /system/bin/udhcpd
-	disabled
-	oneshot
-
-service netsharing_on /system/bin/netsharing net on
-	disabled
-	oneshot
-
-service netsharing_off /system/bin/netsharing net off
-	disabled
-	oneshot
-
-service netsharing_pass /system/bin/netsharing net_pass on
-	disabled
-	oneshot
-
-service amp_init /system/bin/amploader -i
-    user root
-    disabled
-    oneshot
-
-service amp_load /system/bin/amploader -l 7000
-    user root
-    disabled
-    oneshot
-
-service amp_unload /system/bin/amploader -u
-    user root
-    disabled
-    oneshot
-
-service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant -Dnl80211
-    user root
-    group wifi inet
-    socket wpa_wlan0 dgram 660 wifi wifi
-    disabled
-    oneshot
-
-service dhcpcd_wlan0 /system/bin/dhcpcd -ABKLG
     disabled
     oneshot
 
@@ -434,122 +273,34 @@ service dhcpcd_p2p /system/bin/dhcpcd -ABKLG
     disabled
     oneshot
 
-service iprenew_wlan0 /system/bin/dhcpcd -n
+service dhcpcd_wlan0 /system/bin/dhcpcd -ABKLG
     disabled
     oneshot
 
-service iprenew_p2p /system/bin/dhcpcd -n
-    disabled
-    oneshot
-
-service wiperiface /system/bin/wiperiface
-    user location
-    group qcom_oncrpc
-    oneshot
-
-service gpsone_daemon /system/bin/gpsone_daemon
+service dmagent /system/bin/dmagent -N
+    socket dmagent stream 660 root radio
     user root
-    group qcom_oncrpc
-    disabled
-
-service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
-    user root
-    group system qcom_oncrpc
-    disabled
-    oneshot
-
-on property:crypto.driver.load=1
-     insmod /system/lib/modules/qce.ko
-     insmod /system/lib/modules/qcedev.ko
-
-on property:crypto.driver.load=0
-     exec /system/bin/rmmod qcedev.ko
-     exec /system/bin/rmmod qce.ko
+    group radio cache inet misc
 
 service drmdiag /system/bin/drmdiagapp
      user root
      disabled
      oneshot
 
-on property:drmdiag.load=1
-    start drmdiag
+service dund /system/bin/sdptool add --handle=0x1ff01 --channel=1 DUN
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
 
-on property:drmdiag.load=0
-    stop drmdiag
+service dx_drm_server /system/bin/DxDrmServerIpc -f -o allow_other /data/DxDrm/fuse
+    class main
 
-service qcom-sh /system/bin/sh /init.qcom.sh
+service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
     user root
-    oneshot
-
-service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh
-    user root
+    group system qcom_oncrpc
     disabled
     oneshot
-
-service qcom-wifi /system/bin/sh /system/etc/init.qcom.wifi.sh
-    oneshot
-
-on property:init.svc.bootanim=stopped
-    start qcom-post-boot
-
-service atfwd /system/bin/ATFWD-daemon
-    user system
-    group system radio
-    onrestart /system/bin/log -t RIL-ATFWD -p w "ATFWD daemon restarted"
-
-service hdmid /system/bin/hdmid
-    socket displayd stream 0660 root system graphics
-    disabled
-
-on property:ro.hdmi.enable=true
-    start hdmid
-
-service abld /system/bin/mm-abl-daemon
-    disabled
-
-service hostapd /system/bin/hostapd -dddd /data/hostapd/hostapd.conf
-    user root
-    group root
-    oneshot
-    disabled
-
-service ds_fmc_appd /system/bin/ds_fmc_appd -p "rmnet0" -D
-    group radio
-    disabled
-    oneshot
-
-on property:persist.data.ds_fmc_app.mode=1
-    start ds_fmc_appd
-
-service ims_regmanager /system/bin/exe-ims-regmanagerprocessnative
-    user system
-    group qcom_oncrpc net_bt_admin inet radio wifi
-    disabled
-
-on property:persist.ims.regmanager.mode=1
-    start ims_regmanager
-
-on property:ro.data.large_tcp_window_size=true
-    # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
-    write /proc/sys/net/ipv4/tcp_adv_win_scale  1
-
-service thermald /system/bin/thermald
-    user root
-    group root
-    disabled
-
-on property:persist.thermal.monitor=true
-    start thermald
-
-service time_daemon /system/bin/time_daemon
-    user root
-    group root
-    oneshot
-    disabled
-
-on property:persist.timed.enable=true
-    mkdir /data/time/ 0700
-    start time_daemon
 
 service ftp /system/bin/sdptool add --handle=0x1ff20 --psm=5257 --channel=20 FTP
     user bluetooth
@@ -560,6 +311,30 @@ service ftp /system/bin/sdptool add --handle=0x1ff20 --psm=5257 --channel=20 FTP
 service ftp_del /system/bin/sdptool del 0x1ff20
     user bluetooth
     group bluetooth net_bt_admin
+    disabled
+    oneshot
+
+service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
+    user bluetooth
+    group qcom_oncrpc bluetooth net_bt_admin
+    disabled
+    oneshot
+
+service hdmid /system/bin/hdmid
+    socket displayd stream 0660 root system graphics
+    disabled
+
+service hostapd /system/bin/hostapd -dddd /data/hostapd/hostapd.conf
+    user root
+    group root
+    oneshot
+    disabled
+
+service iprenew_p2p /system/bin/dhcpcd -n
+    disabled
+    oneshot
+
+service iprenew_wlan0 /system/bin/dhcpcd -n
     disabled
     oneshot
 
@@ -587,6 +362,41 @@ service map1_del /system/bin/sdptool del 0x1ff17
     disabled
     oneshot
 
+service netmgrd /system/bin/netmgrd
+
+service netsharing_off /system/bin/netsharing net off
+    disabled
+    oneshot
+
+service netsharing_on /system/bin/netsharing net on
+    disabled
+    oneshot
+
+service netsharing_pass /system/bin/netsharing net_pass on
+    disabled
+    oneshot
+
+service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh
+    user root
+    disabled
+    oneshot
+
+service qcom-sh /system/bin/sh /init.qcom.sh
+    user root
+    oneshot
+
+service qcom-wifi /system/bin/sh /system/etc/init.qcom.wifi.sh
+    oneshot
+
+service qmiproxy /system/bin/qmiproxy
+    user radio
+    group radio
+    disabled
+
+service qmuxd /system/bin/qmuxd
+    user radio
+    group radio
+
 service ril-daemon1 /system/bin/rild -c 1
     socket rild1 stream 660 root radio
     socket rild-debug1 stream 660 radio system
@@ -594,39 +404,87 @@ service ril-daemon1 /system/bin/rild -c 1
     disabled
     group radio cache inet misc audio sdcard_rw qcom_oncrpc diag
 
-service profiler_daemon /system/bin/profiler_daemon
+service rmt_storage /system/bin/rmt_storage modem_st1 modem_st2 recovery radio_config
+    class core
+    user root
+    disabled
+
+service sapd /system/bin/sdptool add --handle=0x1ff15 --channel=15 SAP
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
+service thermald /system/bin/thermald
     user root
     group root
     disabled
 
-service tpd /sbin/tpd
+service time_daemon /system/bin/time_daemon
     user root
+    group root
+    oneshot
+    disabled
 
-# compass/accelerometer daemon
-service akmd /system/bin/akmd
-    user compass
-    group compass misc input
-
-# htc_ebdlogd
-service htc_ebdlogd /system/bin/htc_ebdlogd -s -k -P 7
-    user root
+service udhcpd /system/bin/udhcpd
     disabled
     oneshot
-    ioprio idle 0
 
-service htc_ebdlogd_rel /system/bin/htc_ebdlogd -s -k
+service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant -Dnl80211
     user root
+    group wifi inet
+    socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
-    ioprio idle 0
 
-# Discretix DRM change start
-service dx_drm_server /system/bin/DxDrmServerIpc -f -o allow_other /data/DxDrm/fuse
-    class main
+service zchgd_offmode /system/bin/zchgd -pseudooffmode
+    user root
+    group root graphics
+    disabled
 
-on property:ro.build.tags=test-keys
-    start htc_ebdlogd
+service zchgd_onmode /system/bin/zchgd -onmode
+    user root
+    group root graphics
+    oneshot
 
-on property:ro.build.tags=release-keys
-    start htc_ebdlogd_rel
-    
+on property:crypto.driver.load=1
+    insmod /system/lib/modules/qce.ko
+    insmod /system/lib/modules/qcedev.ko
+
+on property:crypto.driver.load=0
+    exec /system/bin/rmmod qcedev.ko
+    exec /system/bin/rmmod qce.ko
+
+on property:drmdiag.load=1
+    start drmdiag
+
+on property:drmdiag.load=0
+    stop drmdiag
+
+on property:init.svc.bootanim=stopped
+    start qcom-post-boot
+
+on property:init.svc.wpa_supplicant=stopped
+    stop dhcpcd
+
+on property:persist.thermal.monitor=true
+    start thermald
+
+on property:persist.timed.enable=true
+    mkdir /data/time/ 0700
+    start time_daemon
+
+on property:ro.baseband="msm"
+    setprop ro.qualcomm.bluetooth.dun true
+
+on property:ro.data.large_tcp_window_size=true
+    write /proc/sys/net/ipv4/tcp_adv_win_scale  1
+
+on property:ro.emmc=1
+    start rmt_storage
+
+on property:ro.hdmi.enable=true
+    start hdmid
+
+on property:ro.use_data_netmgrd=false
+    stop netmgrd
