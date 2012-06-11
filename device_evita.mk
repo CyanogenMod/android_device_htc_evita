@@ -28,8 +28,7 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/ramdisk/init.target.rc:root/init.target.rc \
     device/htc/evita/ramdisk/init.elite.rc:root/init.elite.rc \
     device/htc/evita/ramdisk/init.usb.rc:root/init.usb.rc \
-    device/htc/evita/ramdisk/ueventd.rc:root/ueventd.rc \
-    device/htc/evita/ramdisk/sys/board_properties/virtualkeys.synaptics-rmi-touchscreen:root/sys/board_properties/virtualkeys.synatpics-rmi-touchscreen
+    device/htc/evita/ramdisk/ueventd.rc:root/ueventd.rc
 
 # Qualcomm scripts
 PRODUCT_COPY_FILES += \
