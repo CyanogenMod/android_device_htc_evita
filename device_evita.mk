@@ -115,6 +115,7 @@ PRODUCT_PACKAGES += \
 # Kernel modules
 PRODUCT_COPY_FILES += \
     device/htc/evita/modules/ansi_cprng.ko:/system/lib/modules/ansi_cprng.ko \
+    device/htc/evita/modules/bluetooth-power.ko:/system/lib/modules/bluetooth-power.ko \
     device/htc/evita/modules/cavm_sqos_mod.ko:/system/lib/modules/cavm_sqos_mod.ko \
     device/htc/evita/modules/dma_test.ko:/system/lib/modules/dma_test.ko \
     device/htc/evita/modules/evbug.ko:/system/lib/modules/evbug.ko \
