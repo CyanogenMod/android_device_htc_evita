@@ -27,8 +27,8 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/ramdisk/init.qcom.rc:root/init.qcom.rc \
     device/htc/evita/ramdisk/init.target.rc:root/init.target.rc \
     device/htc/evita/ramdisk/init.elite.rc:root/init.elite.rc \
-    device/htc/evita/ramdisk/init.usb.rc:root/init.usb.rc \
-    device/htc/evita/ramdisk/ueventd.rc:root/ueventd.rc
+    device/htc/evita/ramdisk/init.elite.usb.rc:root/init.elite.usb.rc \
+    device/htc/evita/ramdisk/ueventd.elite.rc:root/ueventd.elite.rc
 
 # GPS config
 PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/gps.conf

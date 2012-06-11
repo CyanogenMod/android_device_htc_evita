@@ -128,6 +128,7 @@
 /dev/usb_accessory        0660   root       usb
 /dev/video*               0660   system     camera
 /dev/tun                  0660   system     vpn
+
 #regular apps need to be able to open ion
 /dev/ion                  0664   system     system
 
@@ -140,6 +141,7 @@
 /dev/msm_vidc_dec         0660  system       audio
 /dev/msm_vidc_dec_sec     0660  system       audio
 /dev/msm_vidc_enc         0660  system       audio
+
 #permissions for audio
 /dev/msm_amrnb            0660  system       audio
 /dev/msm_amrwb            0660  system       audio
@@ -158,6 +160,7 @@
 /dev/msm_preproc_ctl      0660  system       audio
 /dev/msm_a2dp_in          0640  system       audio
 /dev/msm_amrnb_in         0640  system       audio
+
 # sysfs properties
 /sys/devices/virtual/input/input*   enable      0660  root   input
 /sys/devices/virtual/input/input*   poll_delay  0660  root   input
