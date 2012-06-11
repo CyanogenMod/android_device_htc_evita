@@ -109,10 +109,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Torch
 
-# WPA Supplicant
-PRODUCT_PACKAGES += \
-    wpa_supplicant.conf
-
 # Kernel modules
 PRODUCT_COPY_FILES += \
     device/htc/evita/modules/ansi_cprng.ko:/system/lib/modules/ansi_cprng.ko \
