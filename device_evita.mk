@@ -19,9 +19,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/evita/overlay
 
-#Boot Animation
-PRODUCT_COPY_FILES += vendor/cm/prebuilt/common/bootanimation/vertical-720x1280.zip:/system/media/bootanimation.zip
-
 # Boot ramdisk setup
 PRODUCT_COPY_FILES += \
     device/htc/evita/prebuilt/init:root/init \
