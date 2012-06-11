@@ -17,42 +17,31 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+# common msm8960 configs
+$(call inherit-product, device/htc/msm8960-common/msm8960.mk)
+
 DEVICE_PACKAGE_OVERLAYS += device/htc/evita/overlay
 
 # Boot ramdisk setup
 PRODUCT_COPY_FILES += \
-    device/htc/evita/prebuilt/init:root/init \
-    device/htc/evita/ramdisk/init.qcom.sh:root/init.qcom.sh \
     device/htc/evita/ramdisk/init.qcom.rc:root/init.qcom.rc \
-    device/htc/evita/ramdisk/init.rc:root/init.rc \
     device/htc/evita/ramdisk/init.target.rc:root/init.target.rc \
     device/htc/evita/ramdisk/init.elite.rc:root/init.elite.rc \
     device/htc/evita/ramdisk/init.usb.rc:root/init.usb.rc \
     device/htc/evita/ramdisk/ueventd.rc:root/ueventd.rc
-
-# Qualcomm scripts
-PRODUCT_COPY_FILES += \
-    device/htc/evita/configs/init.qcom.bt.sh:/system/etc/init.qcom.bt.sh \
-    device/htc/evita/configs/init.qcom.fm.sh:/system/etc/init.qcom.fm.sh \
-    device/htc/evita/configs/init.qcom.post_boot.sh:/system/etc/init.qcom.post_boot.sh \
-    device/htc/evita/configs/init.qcom.q6_links.sh:/system/etc/init.qcom.q6_links.sh \
-    device/htc/evita/configs/init.qcom.radio_links.sh:/system/etc/init.qcom.radio_links.sh \
-    device/htc/evita/configs/init.qcom.sdio.sh:/system/etc/init.qcom.sdio.sh \
-    device/htc/evita/configs/init.qcom.wcnss_links.sh:/system/etc/init.qcom.wcnss_links.sh \
-    device/htc/evita/configs/init.qcom.wifi.sh:/system/etc/init.qcom.wifi.sh
 
 # GPS config
 PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/gps.conf
 
 # Media config
 PRODUCT_COPY_FILES += \
-    device/htc/evita/configs/media_profiles.xml:system/etc/media_profiles.xml
+    device/htc/msm8960-common/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 # HTC BT audio config
 PRODUCT_COPY_FILES += device/htc/evita/configs/AudioBTID.csv:system/etc/AudioBTID.csv
 
 # QC thermald config
-PRODUCT_COPY_FILES += device/htc/evita/configs/thermald.conf:system/etc/thermald.conf
+PRODUCT_COPY_FILES += device/htc/msm8960-common/configs/thermald.conf:system/etc/thermald.conf
 
 # vold config
 PRODUCT_COPY_FILES += \
@@ -107,26 +96,6 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/idc/qwerty.idc:system/usr/idc/qwerty.idc \
     device/htc/evita/idc/qwert2.idc:system/usr/idc/qwerty2.idc
 
-# Audio
-PRODUCT_PACKAGES += \
-    alsa.msm8960 \
-    audio.a2dp.default \
-    audio_policy.msm8960 \
-    audio.primary.msm8960 \
-    libalsa-intf \
-    libaudioutils
-
-# Graphics
-PRODUCT_PACKAGES += \
-    copybit.msm8960 \
-    gralloc.msm8960 \
-    hwcomposer.msm8960 \
-    libgenlock \
-    libmemalloc \
-    liboverlay \
-    libQcomUI \
-    libtilerenderer
-
 # GPS
 #PRODUCT_PACKAGES += \
 #    gps.evita \
@@ -135,49 +104,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lights.evita
 
-# OMX
-PRODUCT_PACKAGES += \
-    libdivxdrmdecrypt \
-    libmm-omxcore \
-    libOmxCore \
-    libOmxVdec \
-    libOmxVenc \
-    libOmxAacEnc \
-    libOmxAmrEnc \
-    libstagefrighthw
-
-# HDMI
-PRODUCT_PACKAGES += \
-    hdmid
-
 # Torch
 PRODUCT_PACKAGES += \
-		Torch
+    Torch
 
-# USB
-PRODUCT_PACKAGES += \
-    com.android.future.usb.accessory
-
-# Live wallpapers
-PRODUCT_PACKAGES += \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    VisualizationWallpapers \
-    librs_jni
-
-# Filesystem management tools
-PRODUCT_PACKAGES += \
-    make_ext4fs \
-    setup_fs
-
-#WPA Supplicant
+# WPA Supplicant
 PRODUCT_PACKAGES += \
     wpa_supplicant.conf
 
-
 # Kernel modules
 PRODUCT_COPY_FILES += \
-    device/htc/evita/modules/prima_wlan.ko:/system/lib/modules/prima_wlan.ko \
     device/htc/evita/modules/ansi_cprng.ko:/system/lib/modules/ansi_cprng.ko \
     device/htc/evita/modules/cavm_sqos_mod.ko:/system/lib/modules/cavm_sqos_mod.ko \
     device/htc/evita/modules/dma_test.ko:/system/lib/modules/dma_test.ko \
@@ -186,10 +122,8 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/modules/htc_sqos_ctrlmsg.ko:/system/lib/modules/htc_sqos_ctrlmsg.ko \
     device/htc/evita/modules/htc_sqos_encoder.ko:/system/lib/modules/htc_sqos_encoder.ko \
     device/htc/evita/modules/htc_sqos_wifi.ko:/system/lib/modules/htc_sqos_wifi.ko \
-    #device/htc/evita/modules/kineto_gan.ko:/system/lib/modules/kineto_gan.ko \
     device/htc/evita/modules/lcd.ko:/system/lib/modules/lcd.ko \
     device/htc/evita/modules/msm-buspm-dev.ko:/system/lib/modules/msm-buspm-dev.ko \
-    #device/htc/evita/modules/oprofile.ko:/system/lib/modules/oprofile.ko \
     device/htc/evita/modules/prima_wlan.ko:/system/lib/modules/prima_wlan.ko \
     device/htc/evita/modules/qce40.ko:/system/lib/modules/qce40.ko \
     device/htc/evita/modules/qcedev.ko:/system/lib/modules/qcedev.ko \
@@ -199,38 +133,8 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/modules/scsi_wait_scan.ko:/system/lib/modules/scsi_wait_scan.ko \
     device/htc/evita/modules/spidev.ko:/system/lib/modules/spidev.ko
 
-# MSM8960 firmware
-PRODUCT_COPY_FILES += \
-    device/htc/evita/firmware/a225p5_pm4.fw:/system/etc/firmware/a225p5_pm4.fw \
-    device/htc/evita/firmware/a225_pfp.fw:/system/etc/firmware/a225_pfp.fw \
-    device/htc/evita/firmware/a225_pm4.fw:/system/etc/firmware/a225_pm4.fw \
-    device/htc/evita/firmware/leia_pfp_470.fw:/system/etc/firmware/leia_pfp_470.fw \
-    device/htc/evita/firmware/leia_pm4_470.fw:/system/etc/firmware/leia_pm4_470.fw \
-    device/htc/evita/firmware/vidc_1080p.fw:/system/etc/firmware/vidc_1080p.fw
-    #device/htc/evita/firmware/wcd9310_anc.bin:/system/etc/firmware/wcd9310_anc.bin
-
-# Wifi firmware
-PRODUCT_COPY_FILES += \
-    device/htc/evita/firmware/WCNSS_cfg.dat:/system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
-    device/htc/evita/firmware/WCNSS_qcom_cfg.ini:/system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
-    device/htc/evita/firmware/WCNSS_qcom_wlan_nv.bin:/system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
-
 # Permissions
 PRODUCT_COPY_FILES += \
-    frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-    frameworks/base/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
-    frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/base/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardwardware.sensor.gyroscope.xml \
-    frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
-    frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
-    frameworks/base/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
-    frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-    frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
-    frameworks/base/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.compass.xml \
     frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
 # Extra properties
@@ -250,11 +154,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 PRODUCT_LOCALES += en_US hdpi
-PRODUCT_VERSION_DEVICE_SPECIFIC=alpha3
-
-# For RomManager
-ADDITIONAL_BUILD_PROPERTIES += \
-		ro.rommanager.developerid=socaldevs
 
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/htc/evita/evita-vendor.mk)
