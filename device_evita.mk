@@ -83,18 +83,19 @@ PRODUCT_COPY_FILES += \
 
 # Keylayouts and Keychars
 PRODUCT_COPY_FILES += \
-    device/htc/evita/keylayout/synaptics-rmi-touchscreen.kl:system/usr/keylayout/synaptics-rmi-touchscreen.kl \
     device/htc/evita/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
     device/htc/evita/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
     device/htc/evita/keylayout/keypad_8960.kl:system/usr/keylayout/keypad_8960.kl \
-    device/htc/evita/keylayout/msm8960-snd-card_Button_Jack.kl:system/usr/keylayout/msm8960-snd-card_Button_Jack.kl
+    device/htc/evita/keylayout/msm8960-snd-card_Button_Jack.kl:system/usr/keylayout/msm8960-snd-card_Button_Jack.kl \
+    device/htc/evita/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
+    device/htc/evita/keylayout/synaptics-rmi-touchscreen.kl:system/usr/keylayout/synaptics-rmi-touchscreen.kl
 
 # Input device config
 PRODUCT_COPY_FILES += \
-    device/htc/evita/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc \
     device/htc/evita/idc/projector_input.idc:system/usr/idc/projector_input.idc \
+    device/htc/evita/idc/qwerty2.idc:system/usr/idc/qwerty2.idc \
     device/htc/evita/idc/qwerty.idc:system/usr/idc/qwerty.idc \
-    device/htc/evita/idc/qwert2.idc:system/usr/idc/qwerty2.idc
+    device/htc/evita/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc
 
 # GPS
 #PRODUCT_PACKAGES += \
