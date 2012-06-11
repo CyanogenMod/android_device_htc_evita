@@ -25,12 +25,10 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/ramdisk/init.qcom.sh:root/init.qcom.sh \
     device/htc/evita/ramdisk/init.qcom.rc:root/init.qcom.rc \
     device/htc/evita/ramdisk/init.rc:root/init.rc \
-    device/htc/evita/ramdisk/init.goldfish.rc:root/init.goldfish.rc \
     device/htc/evita/ramdisk/init.target.rc:root/init.target.rc \
     device/htc/evita/ramdisk/init.elite.rc:root/init.elite.rc \
     device/htc/evita/ramdisk/init.usb.rc:root/init.usb.rc \
     device/htc/evita/ramdisk/ueventd.rc:root/ueventd.rc \
-    device/htc/evita/ramdisk/ueventd.goldfish.rc:root/ueventd.goldfish.rc \
     device/htc/evita/ramdisk/default.prop:root/default.prop \
     device/htc/evita/ramdisk/sys/board_properties/virtualkeys.synaptics-rmi-touchscreen:root/sys/board_properties/virtualkeys.synatpics-rmi-touchscreen
 
