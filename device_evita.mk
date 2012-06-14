@@ -24,8 +24,6 @@ DEVICE_PACKAGE_OVERLAYS += device/htc/evita/overlay
 
 # Boot ramdisk setup
 PRODUCT_COPY_FILES += \
-    device/htc/evita/ramdisk/init.qcom.rc:root/init.qcom.rc \
-    device/htc/evita/ramdisk/init.target.rc:root/init.target.rc \
     device/htc/evita/ramdisk/init.elite.rc:root/init.elite.rc \
     device/htc/evita/ramdisk/init.elite.usb.rc:root/init.elite.usb.rc \
     device/htc/evita/ramdisk/ueventd.elite.rc:root/ueventd.elite.rc

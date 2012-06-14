@@ -75,6 +75,8 @@
 /dev/msm_snd*             0660   system     audio
 /dev/msm_mp3*             0660   system     audio
 /dev/audience_a1026*      0660   system     audio
+# HTC
+/dev/audience_a1028*      0660   system     audio
 /dev/tpa2018d1*           0660   system     audio
 /dev/msm_audpre           0660   system     audio
 /dev/msm_audio_ctl        0660   system     audio
@@ -90,7 +92,8 @@
 /dev/smd4                 0660   system     system
 /dev/smd3                 0660   bluetooth      bluetooth
 /dev/smd2                 0660   bluetooth      bluetooth
-/dev/smd0                 0640   radio      radio
+# for port bridge
+/dev/smd0                 0660   system     system
 /dev/smd7                 0640   radio      radio
 /dev/smdcntl0             0640   radio      radio
 /dev/smdcntl1             0640   radio      radio
@@ -160,6 +163,20 @@
 /dev/msm_preproc_ctl      0660  system       audio
 /dev/msm_a2dp_in          0640  system       audio
 /dev/msm_amrnb_in         0640  system       audio
+
+# simlock
+/dev/simlock              0660  radio        radio
+
+# evita sensors
+/dev/mpu                  0664  system       system
+/dev/mpuirq               0664  system       system
+/dev/timerirq             0664  system       system
+/dev/akm8975_aot          0640  compass      system
+/dev/akm8975_daemon       0640  compass      system
+/dev/bma150               0640  compass      system
+
+# evita NFC
+/dev/pn544                0600  nfc          nfc
 
 # sysfs properties
 /sys/devices/virtual/input/input*   enable      0660  root   input
