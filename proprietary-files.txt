@@ -44,7 +44,6 @@ lib/libmmjpeg.so
 lib/liboemcamera.so
 lib/libOlaEngine.so
 lib/libposteffect.so
-lib/libOmxVenc.so
 
 # Graphics
 lib/egl/eglsubAndroid.so
@@ -74,6 +73,9 @@ lib/libOpenVG.so
 # lib/libnfc.so
 # lib/libnfc_jni.so
 # lib/hw/nfc.elite.so
+
+# OMX
+lib/libOmxVenc.so
 
 # Qualcomm/HTC common libs
 lib/libdiag.so
