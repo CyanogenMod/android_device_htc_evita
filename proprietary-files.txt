@@ -68,6 +68,12 @@ lib/libgsl.so
 lib/libmm-color-convertor.so
 lib/libOpenVG.so
 
+# NFC
+# lib/libnfc_ndef.so
+# lib/libnfc.so
+# lib/libnfc_jni.so
+# lib/hw/nfc.elite.so
+
 # Qualcomm/HTC common libs
 lib/libdiag.so
 lib/libdsi_netctrl.so
