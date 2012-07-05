@@ -60,3 +60,4 @@ persist.thermal.monitor=true
 
 # UMS
 persist.sys.usb.config=mass_storage,adb
+ro.vold.umsdirtyratio=40
