@@ -69,10 +69,10 @@ lib/libmm-color-convertor.so
 lib/libOpenVG.so
 
 # NFC
-# lib/libnfc_ndef.so
-# lib/libnfc.so
-# lib/libnfc_jni.so
-# lib/hw/nfc.elite.so
+lib/libnfc_ndef.so
+lib/libnfc.so
+lib/libnfc_jni.so
+lib/hw/nfc.elite.so
 
 # OMX
 lib/libOmxVenc.so
