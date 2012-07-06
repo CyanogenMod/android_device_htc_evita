@@ -104,6 +104,21 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     lights.evita
 
+
+# NFC
+PRODUCT_PACKAGES += \
+    libnfc \
+    libnfc_ndef \
+    libnfc_jni \
+    Nfc \
+    Tag \
+    com.android.nfc_extras
+
+# NFC Hardware Specific
+PRODUCT_COPY_FILES += \
+	frameworks/base/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+	frameworks/base/nfc-extras/com.android.nfc_extras.xml
+
 # Torch
 PRODUCT_PACKAGES += \
     Torch
