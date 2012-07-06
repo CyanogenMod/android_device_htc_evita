@@ -69,7 +69,6 @@ lib/libmm-color-convertor.so
 lib/libOpenVG.so
 
 # NFC
-etc/nfcee_access.xml
 lib/libpn544_fw.so
 lib/hw/nfc.elite.so
 

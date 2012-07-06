@@ -36,6 +36,10 @@ PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/gps.conf
 PRODUCT_COPY_FILES += \
     device/htc/msm8960-common/configs/media_profiles.xml:system/etc/media_profiles.xml
 
+# NFC
+PRODUCT_COPY_FILES += \
+    device/htc/evita/configs/nfcee_access.xml:system/etc/nfcee_access.xml
+
 # HTC BT audio config
 PRODUCT_COPY_FILES += device/htc/evita/configs/AudioBTID.csv:system/etc/AudioBTID.csv
 
