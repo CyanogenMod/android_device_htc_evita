@@ -48,6 +48,7 @@ persist.gps.qmienabled=true
 # NFC
 debug.nfc.fw_download=true
 debug.nfc.fw_boot_download=false
+ro.nfc.port=I2C
 
 # enable time services
 persist.timed.enable=true
