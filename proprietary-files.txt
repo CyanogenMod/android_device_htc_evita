@@ -103,5 +103,8 @@ lib/libmllite.so
 lib/libmlplatform.so
 lib/libmpl.so
 
+# Wifi
+bin/hostapd
+
 # Webkit
 lib/libv8.so
