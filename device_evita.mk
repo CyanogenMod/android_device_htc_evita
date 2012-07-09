@@ -111,6 +111,9 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
+    libnfc \
+    libnfc_ndef \
+    libnfc_jni \
     Nfc \
     Tag \
     com.android.nfc_extras
