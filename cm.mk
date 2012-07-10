@@ -16,7 +16,7 @@ $(call inherit-product, device/htc/evita/device_evita.mk)
 PRODUCT_DEVICE := evita
 PRODUCT_NAME := cm_evita
 PRODUCT_BRAND := htc
-PRODUCT_MODEL := HTC One X
+PRODUCT_MODEL := One X
 PRODUCT_MANUFACTURER := HTC
 
 # Set build fingerprint / ID / Product Name etc.
