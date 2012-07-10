@@ -1,0 +1,6 @@
+<resources>
+  <!-- Restart the preview on picture taken -->
+  <bool name="restartPreviewOnPictureTaken">true</bool>
+  <!-- Use ZSL mode -->
+  <bool name="enableZSL">true</bool>
+</resources>
