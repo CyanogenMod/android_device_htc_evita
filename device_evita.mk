@@ -36,9 +36,14 @@ PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/gps.conf
 PRODUCT_COPY_FILES += \
     device/htc/msm8960-common/configs/media_profiles.xml:system/etc/media_profiles.xml
 
-# NFC
+# NFCEE access control
+ifeq ($(TARGET_BUILD_VARIANT),user)
+    NFCEE_ACCESS_PATH := device/samsung/msm8960-common/configs/nfcee_access.xml
+else
+    NFCEE_ACCESS_PATH := device/samsung/msm8960-common/configs/nfcee_access_debug.xml
+endif
 PRODUCT_COPY_FILES += \
-    device/htc/evita/configs/nfcee_access.xml:system/etc/nfcee_access.xml
+    $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
 
 # HTC BT audio config
 PRODUCT_COPY_FILES += device/htc/evita/configs/AudioBTID.csv:system/etc/AudioBTID.csv
@@ -147,6 +152,7 @@ PRODUCT_COPY_FILES += \
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+    device/sample/nxp/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
     frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml
 
