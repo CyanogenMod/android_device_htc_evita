@@ -25,6 +25,7 @@ DEVICE_PACKAGE_OVERLAYS += device/htc/evita/overlay
 # Boot ramdisk setup
 PRODUCT_COPY_FILES += \
     device/htc/evita/prebuilt/init:root/init \
+    device/htc/evita/ramdisk/fstab.elite:root/fstab.elite \
     device/htc/evita/ramdisk/init.elite.rc:root/init.elite.rc \
     device/htc/evita/ramdisk/init.elite.usb.rc:root/init.elite.usb.rc \
     device/htc/evita/ramdisk/ueventd.elite.rc:root/ueventd.elite.rc
@@ -34,7 +35,8 @@ PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/gps.conf
 
 # Media config
 PRODUCT_COPY_FILES += \
-    device/htc/msm8960-common/configs/media_profiles.xml:system/etc/media_profiles.xml
+    device/htc/msm8960-common/configs/media_profiles.xml:system/etc/media_profiles.xml \
+    device/htc/msm8960-common/configs/media_codecs.xml:system/etc/media_codecs.xml
 
 # NFCEE access control
 ifeq ($(TARGET_BUILD_VARIANT),user)

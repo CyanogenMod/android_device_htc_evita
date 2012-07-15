@@ -1,10 +1,10 @@
 import init.elite.usb.rc
 
 on early-init
-    export EXTERNAL_STORAGE /mnt/sdcard
-    mkdir /mnt/sdcard 0001 system system
+    export EXTERNAL_STORAGE /storage/sdcard0
+    mkdir /storage/sdcard0 0001 system system
     # for backwards compatibility
-    symlink /mnt/sdcard  /sdcard
+    symlink /storage/sdcard0 /sdcard
 
 on emmc
     mkdir /system
@@ -12,10 +12,7 @@ on emmc
     mkdir /cache 0770 system cache
     mkdir /devlog 0700 root root
 
-    mount ext4 /dev/block/mmcblk0p33 /system wait ro data=ordered noauto_da_alloc
-    mount ext4 /dev/block/mmcblk0p35 /data wait noatime nosuid nodev data=ordered noauto_da_alloc
-    mount ext4 /dev/block/mmcblk0p34 /cache wait noatime nosuid nodev data=ordered noauto_da_alloc
-    mount ext4 /dev/block/mmcblk0p26 /devlog wait noatime nosuid nodev data=ordered noauto_da_alloc
+    mount_all /fstab.elite
 
 on emmc-fs
     # msm8960 firmware
