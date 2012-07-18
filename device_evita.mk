@@ -111,8 +111,8 @@ PRODUCT_COPY_FILES += \
 #    gps.evita \
 
 # Lights
-PRODUCT_PACKAGES += \
-    lights.evita
+#PRODUCT_PACKAGES += \
+#    lights.evita
 
 
 # NFC
