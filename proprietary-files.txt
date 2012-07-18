@@ -102,7 +102,7 @@ lib/libmlplatform.so
 lib/libmpl.so
 
 # Wifi
-bin/hostapd
+#bin/hostapd
 
 # Webkit
 lib/libv8.so
