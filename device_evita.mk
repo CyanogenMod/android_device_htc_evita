@@ -38,13 +38,13 @@ PRODUCT_COPY_FILES += \
     device/htc/msm8960-common/configs/media_codecs.xml:system/etc/media_codecs.xml
 
 # NFCEE access control
-ifeq ($(TARGET_BUILD_VARIANT),user)
-    NFCEE_ACCESS_PATH := device/htc/evita/configs/nfcee_access.xml
-else
-    NFCEE_ACCESS_PATH := device/htc/evita/configs/nfcee_access_debug.xml
-endif
-PRODUCT_COPY_FILES += \
-    $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
+#ifeq ($(TARGET_BUILD_VARIANT),user)
+#    NFCEE_ACCESS_PATH := device/htc/evita/configs/nfcee_access.xml
+#else
+#    NFCEE_ACCESS_PATH := device/htc/evita/configs/nfcee_access_debug.xml
+#endif
+#PRODUCT_COPY_FILES += \
+#    $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
 
 # HTC BT audio config
 PRODUCT_COPY_FILES += device/htc/evita/configs/AudioBTID.csv:system/etc/AudioBTID.csv
@@ -151,11 +151,11 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/modules/spidev.ko:/system/lib/modules/spidev.ko
 
 # Permissions
-PRODUCT_COPY_FILES += \
-    frameworks/base/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
-    device/sample/nxp/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
-    frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml
+#PRODUCT_COPY_FILES += \
+#    frameworks/base/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+#    device/sample/nxp/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
+#    frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
+#    frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml
 
 # Extra properties
 PRODUCT_PROPERTY_OVERRIDES += \
