@@ -48,17 +48,8 @@ COMMON_GLOBAL_CFLAGS += -DQCOM_ICS_COMPAT
 #BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 #BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := evita
 
-# Graphics
-TARGET_USES_OVERLAY := false
-
 # Lights
 TARGET_PROVIDES_LIBLIGHTS := true
-
-# RIL
-BOARD_PROVIDES_LIBRIL := true
-
-# USB
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun0/file
 
 # Wifi
 WIFI_DRIVER_MODULE_NAME          := prima_wlan
