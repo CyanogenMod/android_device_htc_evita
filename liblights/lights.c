@@ -78,7 +78,7 @@ static int write_int(const char* path, int value) {
   fd = open(path, O_RDWR);
   if (fd < 0) {
     if (already_warned == 0) {
-      LOGE("write_int failed to open %s\n", path);
+      ALOGE("write_int failed to open %s\n", path);
       already_warned = 1;
     }
     return -errno;
@@ -104,8 +104,6 @@ static void set_speaker_light_locked(struct light_device_t *dev,
   unsigned int colorRGB = state->color & 0xFFFFFF;
   unsigned int color = LED_BLANK;
   unsigned int blinkMode = BLINK_MODE_OFF;
-
-  LOGD("set_speaker_light_locked, colorRGB: %08X, flashMode: %d, blinkMode: %d", colorRGB, state->flashMode, blinkMode);
 
   if ((colorRGB >> 8) & 0xFF) color = LED_GREEN;
   if ((colorRGB >> 16) & 0xFF) color = LED_AMBER;
@@ -147,7 +145,7 @@ static void set_speaker_light_locked(struct light_device_t *dev,
           write_int(GREEN_BLINK_FILE, 0);
           break;
         default:
-          LOGE("set_led_state colorRGB=%08X, unknown color\n", colorRGB);
+          ALOGE("set_led_state colorRGB=%08X, unknown color\n", colorRGB);
           break;
       }
       break;
@@ -168,7 +166,7 @@ static void set_speaker_light_locked(struct light_device_t *dev,
       }
       break;
     default:
-      LOGE("set_led_state colorRGB=%08X, unknown mode %d\n",
+      ALOGE("set_led_state colorRGB=%08X, unknown mode %d\n",
            colorRGB, state->flashMode);
   }
 }
@@ -197,7 +195,7 @@ static void set_speaker_light_locked_dual(struct light_device_t *dev,
       write_int (AMBER_BLINK_FILE, 4);
       break;
     default:
-      LOGE("set_led_state (dual) unexpected color: bcolorRGB=%08x\n", bcolorRGB);
+      ALOGE("set_led_state (dual) unexpected color: bcolorRGB=%08x\n", bcolorRGB);
   }
 }
 
