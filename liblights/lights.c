@@ -178,8 +178,6 @@ static void set_speaker_light_locked_dual(struct light_device_t *dev,
   unsigned int bcolor = LED_BLANK;
   unsigned int blinkMode = BLINK_MODE_LONG;
 
-  LOGD("set_speaker_light_locked_dual, colorRGB: %08X", bcolorRGB);
-
   if ((bcolorRGB >> 8) & 0xFF) bcolor = LED_GREEN;
   if ((bcolorRGB >> 16) & 0xFF) bcolor = LED_AMBER;
 
@@ -232,7 +230,7 @@ static int set_light_backlight(struct light_device_t* dev,
                                struct light_state_t const* state) {
   int err = 0;
   int brightness = rgb_to_brightness(state);
-  LOGV("%s brightness=%d color=0x%08x", __func__,brightness, state->color);
+  ALOGV("%s brightness=%d color=0x%08x", __func__,brightness, state->color);
   pthread_mutex_lock(&g_lock);
   g_backlight = brightness;
   err = write_int(LCD_BACKLIGHT_FILE, brightness);
