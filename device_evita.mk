@@ -111,8 +111,8 @@ PRODUCT_COPY_FILES += \
 #    gps.evita \
 
 # Lights
-#PRODUCT_PACKAGES += \
-#    lights.evita
+PRODUCT_PACKAGES += \
+    lights.evita
 
 
 # NFC
@@ -141,7 +141,7 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/modules/htc_sqos_wifi.ko:/system/lib/modules/htc_sqos_wifi.ko \
     device/htc/evita/modules/lcd.ko:/system/lib/modules/lcd.ko \
     device/htc/evita/modules/msm-buspm-dev.ko:/system/lib/modules/msm-buspm-dev.ko \
-    device/htc/evita/modules/prima_wlan.ko:/system/lib/modules/prima_wlan.ko \
+#    device/htc/evita/modules/prima_wlan.ko:/system/lib/modules/prima_wlan.ko \
     device/htc/evita/modules/qce40.ko:/system/lib/modules/qce40.ko \
     device/htc/evita/modules/qcedev.ko:/system/lib/modules/qcedev.ko \
     device/htc/evita/modules/qcrypto.ko:/system/lib/modules/qcrypto.ko \
@@ -179,4 +179,4 @@ PRODUCT_LOCALES += en_US xhdpi
 $(call inherit-product-if-exists, vendor/htc/evita/evita-vendor.mk)
 
 # call dalvik heap config
-$(call inherit-product-if-exists, frameworks/base/build/phone-xhdpi-1024-dalvik-heap.mk)
+$(call inherit-product-if-exists, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
