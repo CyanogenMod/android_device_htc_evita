@@ -1,16 +1,15 @@
 import init.elite.usb.rc
-
 on early-init
-    export EXTERNAL_STORAGE /mnt/sdcard
-    mkdir /mnt/sdcard 0000 system system
+    mkdir /storage 0050 system sdcard_r
+    mkdir /storage/sdcard0 0000 system system
 
     # for backwards compatibility
-    symlink /mnt/sdcard /sdcard
+    symlink /storage/sdcard0 /sdcard
+    symlink /storage/sdcard0 /mnt/sdcard
+
+    export EXTERNAL_STORAGE /storage/sdcard0
 
 on init
-    mkdir /system
-    mkdir /data 0771 system system
-    mkdir /cache 0771 system cache
     mkdir /devlog 0700 root root
 
 on emmc-fs
@@ -25,15 +24,8 @@ on emmc-fs
     mkdir /firmware_wcnss 0771 system system
     mkdir /firmware_dsps 0771 system system
 
-    #mount vfat /dev/block/mmcblk0p16 /firmware_dsps wait ro shortname=lower
-    mount vfat /dev/block/mmcblk0p17 /firmware_radio wait ro shortname=lower
-    mount vfat /dev/block/mmcblk0p18 /firmware_q6 wait ro shortname=lower
-    mount vfat /dev/block/mmcblk0p19 /firmware_wcnss wait ro shortname=lower
-
-    mount ext4 /dev/block/mmcblk0p33 /system wait ro data=ordered noauto_da_alloc
-    mount ext4 /dev/block/mmcblk0p35 /data wait noatime nosuid nodev data=ordered noauto_da_alloc
-    mount ext4 /dev/block/mmcblk0p34 /cache wait noatime nosuid nodev data=ordered noauto_da_alloc
-    mount ext4 /dev/block/mmcblk0p26 /devlog wait noatime nosuid nodev data=ordered noauto_da_alloc
+    # mount all mmc partitions
+    mount_all /fstab.elite
 
     # use qcom link scripts for firmware links
     #exec /system/bin/sh /system/etc/init.qcom.dsps_links.sh
@@ -186,11 +178,6 @@ service hdmid /system/bin/hdmid
 
 service iprenew_wlan0 /system/bin/dhcpcd -n
     disabled
-    oneshot
-
-service kick_rild /system/xbin/killall -9 rild
-    class late_start
-    user root
     oneshot
 
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
