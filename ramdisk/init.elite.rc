@@ -10,6 +10,9 @@ on early-init
     export EXTERNAL_STORAGE /storage/sdcard0
 
 on init
+    mkdir /system
+    mkdir /data 0771 system system
+    mkdir /cache 0770 system cache
     mkdir /devlog 0700 root root
 
 on emmc-fs
