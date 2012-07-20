@@ -36,6 +36,10 @@ on emmc-fs
     exec /system/bin/sh /system/etc/init.qcom.radio_links.sh
     exec /system/bin/sh /system/etc/init.qcom.wcnss_links.sh
 
+    # for NFC
+    symlink /system/vendor/pittpatt /vendor/pittpatt
+    symlink /system/vendor/firmware/libpn544_fw.so /vendor/firmware/libpn544_fw.so
+
 on post-fs-data
     # double check perms and set owner
     chown root root /devlog
