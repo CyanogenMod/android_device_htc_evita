@@ -37,7 +37,7 @@ PRODUCT_COPY_FILES += \
     device/htc/msm8960-common/configs/media_profiles.xml:system/etc/media_profiles.xml \
     device/htc/msm8960-common/configs/media_codecs.xml:system/etc/media_codecs.xml
 
- NFCEE access control
+# NFCEE access control
 ifeq ($(TARGET_BUILD_VARIANT),user)
     NFCEE_ACCESS_PATH := device/htc/evita/configs/nfcee_access.xml
 else
