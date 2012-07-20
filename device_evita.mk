@@ -37,14 +37,14 @@ PRODUCT_COPY_FILES += \
     device/htc/msm8960-common/configs/media_profiles.xml:system/etc/media_profiles.xml \
     device/htc/msm8960-common/configs/media_codecs.xml:system/etc/media_codecs.xml
 
-# NFCEE access control
-#ifeq ($(TARGET_BUILD_VARIANT),user)
-#    NFCEE_ACCESS_PATH := device/htc/evita/configs/nfcee_access.xml
-#else
-#    NFCEE_ACCESS_PATH := device/htc/evita/configs/nfcee_access_debug.xml
-#endif
-#PRODUCT_COPY_FILES += \
-#    $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
+ NFCEE access control
+ifeq ($(TARGET_BUILD_VARIANT),user)
+    NFCEE_ACCESS_PATH := device/htc/evita/configs/nfcee_access.xml
+else
+    NFCEE_ACCESS_PATH := device/htc/evita/configs/nfcee_access_debug.xml
+endif
+PRODUCT_COPY_FILES += \
+    $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
 
 # HTC BT audio config
 PRODUCT_COPY_FILES += device/htc/evita/configs/AudioBTID.csv:system/etc/AudioBTID.csv
@@ -129,33 +129,33 @@ PRODUCT_PACKAGES += \
     Torch
 
 # Kernel modules
-PRODUCT_COPY_FILES += \
-    device/htc/evita/modules/ansi_cprng.ko:/system/lib/modules/ansi_cprng.ko \
-    device/htc/evita/modules/bluetooth-power.ko:/system/lib/modules/bluetooth-power.ko \
-    device/htc/evita/modules/cavm_sqos_mod.ko:/system/lib/modules/cavm_sqos_mod.ko \
-    device/htc/evita/modules/dma_test.ko:/system/lib/modules/dma_test.ko \
-    device/htc/evita/modules/evbug.ko:/system/lib/modules/evbug.ko \
-    device/htc/evita/modules/gspca_main.ko:/system/lib/modules/gspca_main.ko \
-    device/htc/evita/modules/htc_sqos_ctrlmsg.ko:/system/lib/modules/htc_sqos_ctrlmsg.ko \
-    device/htc/evita/modules/htc_sqos_encoder.ko:/system/lib/modules/htc_sqos_encoder.ko \
-    device/htc/evita/modules/htc_sqos_wifi.ko:/system/lib/modules/htc_sqos_wifi.ko \
-    device/htc/evita/modules/lcd.ko:/system/lib/modules/lcd.ko \
-    device/htc/evita/modules/msm-buspm-dev.ko:/system/lib/modules/msm-buspm-dev.ko \
+#PRODUCT_COPY_FILES += \
+#    device/htc/evita/modules/ansi_cprng.ko:/system/lib/modules/ansi_cprng.ko \
+#    device/htc/evita/modules/bluetooth-power.ko:/system/lib/modules/bluetooth-power.ko \
+#    device/htc/evita/modules/cavm_sqos_mod.ko:/system/lib/modules/cavm_sqos_mod.ko \
+#    device/htc/evita/modules/dma_test.ko:/system/lib/modules/dma_test.ko \
+#    device/htc/evita/modules/evbug.ko:/system/lib/modules/evbug.ko \
+#    device/htc/evita/modules/gspca_main.ko:/system/lib/modules/gspca_main.ko \
+#    device/htc/evita/modules/htc_sqos_ctrlmsg.ko:/system/lib/modules/htc_sqos_ctrlmsg.ko \
+#    device/htc/evita/modules/htc_sqos_encoder.ko:/system/lib/modules/htc_sqos_encoder.ko \
+#    device/htc/evita/modules/htc_sqos_wifi.ko:/system/lib/modules/htc_sqos_wifi.ko \
+#    device/htc/evita/modules/lcd.ko:/system/lib/modules/lcd.ko \
+#    device/htc/evita/modules/msm-buspm-dev.ko:/system/lib/modules/msm-buspm-dev.ko \
 #    device/htc/evita/modules/prima_wlan.ko:/system/lib/modules/prima_wlan.ko \
-    device/htc/evita/modules/qce40.ko:/system/lib/modules/qce40.ko \
-    device/htc/evita/modules/qcedev.ko:/system/lib/modules/qcedev.ko \
-    device/htc/evita/modules/qcrypto.ko:/system/lib/modules/qcrypto.ko \
-    device/htc/evita/modules/radio-iris-transport.ko:/system/lib/modules/radio-iris-transport.ko \
-    device/htc/evita/modules/reset_modem.ko:/system/lib/modules/reset_modem.ko \
-    device/htc/evita/modules/scsi_wait_scan.ko:/system/lib/modules/scsi_wait_scan.ko \
-    device/htc/evita/modules/spidev.ko:/system/lib/modules/spidev.ko
+#    device/htc/evita/modules/qce40.ko:/system/lib/modules/qce40.ko \
+#    device/htc/evita/modules/qcedev.ko:/system/lib/modules/qcedev.ko \
+#    device/htc/evita/modules/qcrypto.ko:/system/lib/modules/qcrypto.ko \
+#    device/htc/evita/modules/radio-iris-transport.ko:/system/lib/modules/radio-iris-transport.ko \
+#    device/htc/evita/modules/reset_modem.ko:/system/lib/modules/reset_modem.ko \
+#    device/htc/evita/modules/scsi_wait_scan.ko:/system/lib/modules/scsi_wait_scan.ko \
+#    device/htc/evita/modules/spidev.ko:/system/lib/modules/spidev.ko
 
 # Permissions
-#PRODUCT_COPY_FILES += \
-#    frameworks/base/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
-#    device/sample/nxp/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
-#    frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-#    frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+    device/sample/nxp/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml
 
 # Extra properties
 PRODUCT_PROPERTY_OVERRIDES += \
