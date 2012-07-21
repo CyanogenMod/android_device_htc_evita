@@ -129,7 +129,7 @@ PRODUCT_PACKAGES += \
     Torch
 
 # Kernel modules
-#PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES += \
     device/htc/evita/modules/ansi_cprng.ko:/system/lib/modules/ansi_cprng.ko \
     device/htc/evita/modules/bluetooth-power.ko:/system/lib/modules/bluetooth-power.ko \
     device/htc/evita/modules/cavm_sqos_mod.ko:/system/lib/modules/cavm_sqos_mod.ko \
@@ -147,9 +147,8 @@ PRODUCT_PACKAGES += \
     device/htc/evita/modules/radio-iris-transport.ko:/system/lib/modules/radio-iris-transport.ko \
     device/htc/evita/modules/reset_modem.ko:/system/lib/modules/reset_modem.ko \
     device/htc/evita/modules/scsi_wait_scan.ko:/system/lib/modules/scsi_wait_scan.ko \
-    device/htc/evita/modules/spidev.ko:/system/lib/modules/spidev.ko
-
-#     device/htc/evita/modules/prima_wlan.ko:/system/lib/modules/prima_wlan.ko \
+    device/htc/evita/modules/spidev.ko:/system/lib/modules/spidev.ko \
+    device/htc/evita/modules/prima_wlan.ko:/system/lib/modules/prima_wlan.ko 
 
 # Permissions
 PRODUCT_COPY_FILES += \
