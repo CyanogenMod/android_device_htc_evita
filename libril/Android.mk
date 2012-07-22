@@ -1,6 +1,6 @@
 # Copyright 2006 The Android Open Source Project
 
-ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),elite)
+ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),evita)
 
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
