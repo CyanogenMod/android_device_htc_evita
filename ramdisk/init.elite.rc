@@ -1,4 +1,5 @@
 import init.elite.usb.rc
+
 on early-init
     mkdir /storage 0050 system sdcard_r
     mkdir /storage/sdcard0 0000 system system
@@ -10,9 +11,6 @@ on early-init
     export EXTERNAL_STORAGE /storage/sdcard0
 
 on init
-    mkdir /system
-    mkdir /data 0771 system system
-    mkdir /cache 0770 system cache
     mkdir /devlog 0700 root root
 
 on emmc-fs
