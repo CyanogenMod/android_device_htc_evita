@@ -74,7 +74,7 @@ lib/libpn544_fw.so
 lib/hw/nfc.elite.so
 
 # OMX
-lib/libOmxVenc.so
+#lib/libOmxVenc.so
 
 # Qualcomm/HTC common libs
 lib/libdiag.so
