@@ -32,7 +32,7 @@
 /dev/android_adb          0660   adb        adb
 /dev/android_adb_enable   0660   adb        adb
 /dev/ttyMSM0              0600   bluetooth  bluetooth
-/dev/ttyHS0               0600   bluetooth  bluetooth
+/dev/ttyHS0               0660   bluetooth  bluetooth
 /dev/ttyGS0               0660   system     system
 /dev/uinput               0660   system     bluetooth
 /dev/alarm                0664   system     radio
@@ -49,7 +49,7 @@
 /dev/pmem_smipool*        0660   system     camera
 /dev/pmem_adsp*           0660   system     audio
 /dev/pmem_camera*         0660   system     camera
-/dev/oncrpc/*             0660   root       system
+/dev/oncrpc/*             0660   radio      system
 /dev/adsp/*               0660   system     audio
 /dev/snd/*                0660   system     audio
 /dev/mt9t013              0660   system     system
@@ -196,3 +196,13 @@
 /dev/felica_int        0444   felicaclient   felicaclient
 /dev/felica_int_poll   0400   felicaclient   felicaclient
 /dev/felica_uid        0222   felicaclient   felicaclient
+
+# for modem link
+/sys/module/serial/parameters/modem_enabled    0600    system  system
+/dev/ttyHSUSB0                                 0600    system  system
+/dev/ttySA0                                    0600    system  system
+/dev/smd9                                      0600    system  system
+
+# for autobot car pc
+/dev/ttyHSUSB3                                 0660    autobot_access autobot_access
+/dev/ttyHSUSB1                                 0600    system system
