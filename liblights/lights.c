@@ -66,7 +66,7 @@ enum {
   BLINK_MODE_VERY_SHORT,
   BLINK_MODE_SHORT,
   BLINK_MODE_NORMAL,
-  BLINK_MODE_LONG
+  BLINK_MODE_LONG,
 };
 
 static int write_int(const char* path, int value) {
