@@ -3,8 +3,12 @@ etc/agps_rm
 
 # Executable files
 bin/akmd
+bin/cand
 bin/charging
+bin/ewtzmud
 bin/hci_qcomm_init
+bin/hostapd
+bin/mm-abl-daemon
 bin/mm-qcamera-daemon
 bin/mpdecision
 bin/netmgrd
@@ -31,6 +35,7 @@ lib/libchromatix_s5k6a1gx_default_video.so
 lib/libchromatix_s5k6a1gx_preview.so
 lib/libchromatix_s5k6a1gx_zsl.so
 lib/hw/camera.msm8960.so
+lib/libcamera_client.so
 lib/libcameraface.so
 lib/libcamerapp.so
 lib/libcam_oem_plugin.so
@@ -73,9 +78,6 @@ lib/libOpenVG.so
 lib/libpn544_fw.so
 lib/hw/nfc.elite.so
 
-# OMX
-#lib/libOmxVenc.so
-
 # Qualcomm/HTC common libs
 lib/libdiag.so
 lib/libdsi_netctrl.so
@@ -95,7 +97,6 @@ lib/libnetmgr.so
 lib/libqc-opt.so
 lib/libril-qc-qmi-1.so
 lib/libril-qcril-hook-oem.so
-#lib/libril.so
 
 # Sensors
 lib/hw/sensors.elite.so
@@ -103,9 +104,6 @@ lib/libimu.so
 lib/libmllite.so
 lib/libmlplatform.so
 lib/libmpl.so
-
-# Wifi
-bin/hostapd
 
 # Webkit
 lib/libv8.so
