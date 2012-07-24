@@ -12,6 +12,7 @@ Proximity Sensor
 Auto-Rotation
 
 In Progress:
+Mic in Calls
 Wired Headset not working
 WiFi Hotspot
 Notification LED
