@@ -3,12 +3,9 @@ etc/agps_rm
 
 # Executable files
 bin/akmd
-bin/cand
 bin/charging
-bin/ewtzmud
 bin/hci_qcomm_init
 bin/hostapd
-bin/mm-abl-daemon
 bin/mm-qcamera-daemon
 bin/mpdecision
 bin/netmgrd
@@ -48,7 +45,6 @@ lib/libmmjpeg.so
 lib/liboemcamera.so
 lib/libOlaEngine.so
 lib/libposteffect.so
-lib/libsurfaceflinger_client.so
 
 # Graphics
 lib/egl/eglsubAndroid.so
