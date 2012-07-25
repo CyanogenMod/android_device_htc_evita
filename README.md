@@ -1,6 +1,6 @@
 HTC Evita Device Tree
 ========================
-Android device tree for HTC One XL (evita)<br><br>
+Android device tree for HTC One XL (evita) - Jellybean branch<br><br>
 Working:<br>
 Voice/Data<br>
 NFC<br>
