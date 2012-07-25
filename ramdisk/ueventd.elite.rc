@@ -8,14 +8,19 @@
 /dev/ashmem               0666   root       root
 /dev/binder               0666   root       root
 /dev/rtc0                 0600   system     system
+
+# HTC diag
+/dev/btdiag               0660   radio      radio
+/dev/diag                 0660   radio      radio
+/dev/diag_arm9            0660   radio      radio
+/dev/diag_mdm             0660   radio      radio
+/dev/htcdiag              0660   radio      radio
+
 # logger should be world writable (for logging) but not readable
 /dev/log/*                0662   root       log
 
 # the msm hw3d client device node is world writable/readable.
 /dev/msm_hw3dc            0666   root       root
-
-# the DIAG device node is world writable/readable.
-/dev/diag                 0666   root       root
 
 # the genlock client device node is world writable/readable.
 /dev/genlock              0666   root      root
@@ -27,8 +32,6 @@
 /dev/kgsl-2d1             0666   root       root
 
 # these should not be world writable
-/dev/diag                 0660   radio      radio
-/dev/diag_arm9            0660   radio      radio
 /dev/android_adb          0660   adb        adb
 /dev/android_adb_enable   0660   adb        adb
 /dev/ttyMSM0              0600   bluetooth  bluetooth
