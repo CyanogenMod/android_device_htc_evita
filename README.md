@@ -15,8 +15,8 @@ Notification LED<br>
 Bluetooth Tethering<br>
 Bluetooth Audio<br>
 Still Camera (w/Zero Shutter Lag)<br>
-Multitouch (need kernel source)<br>
-USB Tethering (need kernel source)<br>
+Multitouch<br>
+USB Tethering<br>
 <br>
 Not Working:<br>
 Panorama Camera<br>
