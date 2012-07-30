@@ -18,8 +18,10 @@ Multitouch<br>
 USB Tethering<br>
 <br>
 Not Working:<br>
+Rotation crashes system when watching Videos<br>
 Camera<br>
 Video Camera<br>
 <br>
 Things of note:<br>
 You WILL receive a SIM PIN message on bootup. Just choose Dismiss. Will be fixed at a later time.<br>
+Video sometimes has a blue tint<br>
