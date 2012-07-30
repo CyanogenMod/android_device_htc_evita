@@ -13,11 +13,11 @@ WiFi Hotspot<br>
 Notification LED<br>
 Bluetooth Tethering<br>
 Bluetooth Audio<br>
+Wired Headphones<br>
+Multitouch<br>
+USB Tethering<br>
 <br>
 Not Working:<br>
-Wired Headphones not working<br>
-Multitouch (need kernel source)<br>
-USB Tethering (need kernel source)<br>
 Camera<br>
 Video Camera<br>
 <br>
