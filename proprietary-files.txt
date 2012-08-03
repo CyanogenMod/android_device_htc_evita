@@ -19,8 +19,6 @@ bin/zchgd
 # Audio
 lib/libacdbloader.so
 lib/libaudcal.so
-lib/libwvm.so
-lib/libWVStreamControlAPI_L3.so
 
 # Camera
 lib/libchromatix_s5k3h2yx_default_video.so
@@ -34,6 +32,7 @@ lib/libchromatix_s5k6a1gx_zsl.so
 lib/hw/camera.msm8960.so
 lib/libcameraface.so
 lib/libcamerapp.so
+lib/libcamera_client.so
 lib/libcam_oem_plugin.so
 lib/libDxOAF.so
 lib/libgemini.so
@@ -45,6 +44,7 @@ lib/libmmjpeg.so
 lib/liboemcamera.so
 lib/libOlaEngine.so
 lib/libposteffect.so
+lib/libsurfaceflinger_client.so
 
 # Graphics
 lib/egl/eglsubAndroid.so
@@ -53,6 +53,7 @@ lib/egl/libGLESv1_CM_adreno200.so
 lib/egl/libGLESv2_adreno200.so
 lib/egl/libq3dtools_adreno200.so
 lib/libC2D2.so
+lib/libgsl.so
 lib/libsc-a2xx.so
 
 # GPS
@@ -64,9 +65,15 @@ lib/libloc_api_v02.so
 lib/libloc_eng.so
 lib/libloc_ext.so
 
-# Misc libraries
-lib/libgsl.so
+# Media libraries
+lib/libmmosal.so
 lib/libmm-color-convertor.so
+lib/libmmparser.so
+lib/libmmparser_divxdrmlib.so
+lib/libwvm.so
+lib/libWVStreamControlAPI_L3.so
+
+# Misc libraries
 lib/libOpenVG.so
 
 # NFC
