@@ -94,6 +94,10 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/idc/qwerty.idc:system/usr/idc/qwerty.idc \
     device/htc/evita/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc
 
+# Camera
+PRODUCT_PACKAGES += \
+    libcameraservice
+
 # GPS
 #PRODUCT_PACKAGES += \
 #    gps.evita \
