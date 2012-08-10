@@ -96,7 +96,9 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    libcameraservice
+    libcameraservice \
+    libcamera_client \
+    camera.msm8960
 
 # GPS
 #PRODUCT_PACKAGES += \

@@ -36,8 +36,9 @@ for FILE in `egrep -v '(^#|^$)' proprietary-files.txt`; do
   COUNT=`expr $COUNT - 1`
   if [ $COUNT = "0" ]; then
     LINEEND=""
-  fi
-  echo "  $OUTDIR/proprietary/$FILE:system/$FILE$LINEEND" >> $MAKEFILE
+  fi	
+  NFILE=$(echo $FILE | sed 's/camera\.msm8960\.so/vendor-camera\.msm8960\.so/')
+  echo "  $OUTDIR/proprietary/$FILE:system/$NFILE$LINEEND" >> $MAKEFILE
 done
 
 (cat << EOF) > ../../../$OUTDIR/$DEVICE-vendor.mk
