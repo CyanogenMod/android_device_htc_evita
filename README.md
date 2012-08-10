@@ -16,11 +16,9 @@ Bluetooth Audio<br>
 Wired Headphones<br>
 Multitouch<br>
 USB Tethering<br>
+Camera<br>
+Rotation Works in Videos (Only if you Disable HW Overlay in Developer Options)<br>
 <br>
 Not Working:<br>
-Rotation crashes system when watching Videos<br>
-Camera<br>
 Video Camera<br>
 <br>
-Things of note:<br>
-(Fixed - not merged yet) - You WILL receive a SIM PIN message on bootup. Just choose Dismiss. Will be fixed at a later time.<br>
