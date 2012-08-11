@@ -5,8 +5,4 @@
   <bool name="noFaceDetectOnFrontCamera">true</bool>
   <!-- Disable face detection on the rear camera -->
   <bool name="noFaceDetectOnRearCamera">true</bool>
-  <!-- Use ZSL mode -->
-  <bool name="enableZSL">true</bool>
-  <!-- Restart the preview on picture taken -->
-  <bool name="restartPreviewOnPictureTaken">true</bool>
 </resources>
