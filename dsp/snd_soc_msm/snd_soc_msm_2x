@@ -5867,12 +5867,12 @@ SectionDevice
 		'SLIM_0_TX Channels':0:Two
 		'SLIM TX7 MUX':0:DEC6
 		'DEC6 MUX':0:ADC1
-		'DEC6 Volume':1:85
-		'ADC1 Volume':1:85
+		'DEC6 Volume':1:75
+		'ADC1 Volume':1:67
 		'MICBIAS1 CAPLESS Switch':1:1
 		'SLIM TX8 MUX':0:DEC4
 		'DEC4 MUX':0:ADC3
-		'DEC4 Volume':1:85
+		'DEC4 Volume':1:0
 		'MICBIAS3 CAPLESS Switch':1:1
 		'DUAL MICBIAS Switch':1:1
 	EndSequence
