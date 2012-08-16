@@ -5,7 +5,6 @@ etc/agps_rm
 bin/akmd
 bin/charging
 bin/hci_qcomm_init
-bin/hostapd
 bin/mm-qcamera-daemon
 bin/mpdecision
 bin/netmgrd
@@ -32,7 +31,6 @@ lib/libchromatix_s5k6a1gx_zsl.so
 lib/hw/camera.msm8960.so
 lib/libcameraface.so
 lib/libcamerapp.so
-lib/libcamera_client.so
 lib/libcam_oem_plugin.so
 lib/libDxOAF.so
 lib/libgemini.so
@@ -60,12 +58,10 @@ lib/libsc-a2xx.so
 
 # GPS
 lib/hw/gps.default.so
-#lib/libgps.so
 lib/libgps.utils.so
 lib/libloc_adapter.so
 lib/libloc_api_v02.so
 lib/libloc_eng.so
-#lib/libloc_ext.so
 
 # Media libraries
 lib/libmmosal.so
