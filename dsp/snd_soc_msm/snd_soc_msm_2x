@@ -5864,33 +5864,27 @@ SectionDevice
 	Comment "Handset Tx device"
 
 	EnableSequence
-		'SLIM_0_TX Channels':0:Two
+		'SLIM_0_TX Channels':0:One
 		'SLIM TX7 MUX':0:DEC6
 		'DEC6 MUX':0:ADC1
 		'DEC6 Volume':1:75
-		'ADC1 Volume':1:67
+		'ADC1 Volume':1:0
 		'MICBIAS1 CAPLESS Switch':1:1
-		'SLIM TX8 MUX':0:DEC4
-		'DEC4 MUX':0:ADC3
-		'DEC4 Volume':1:0
-		'MICBIAS3 CAPLESS Switch':1:1
 		'DUAL MICBIAS Switch':1:1
+		'MICBIAS1 CAPLESS Switch':1:1
 	EndSequence
 
 	DisableSequence
 		'ADC1 Volume':1:0
-		'DEC4 Volume':1:0
 		'DEC6 Volume':1:0
-		'DEC4 MUX':0:ZERO
 		'DEC6 MUX':0:ZERO
 		'SLIM TX7 MUX':0:ZERO
-		'SLIM TX8 MUX':0:ZERO
 		'MICBIAS1 CAPLESS Switch':1:0
-		'MICBIAS3 CAPLESS Switch':1:0
 		'DUAL MICBIAS Switch':1:0
+		'MICBIAS1 CAPLESS Switch':1:0
 	EndSequence
 
-	ACDBID 6:2
+	ACDBID 4:2
 
 EndSection
 
@@ -5902,7 +5896,7 @@ SectionDevice
 		'SLIM_0_RX Channels':0:One
 		'RX1 MIX1 INP1':0:RX1
 		'DAC1 Switch':1:1
-		'RX1 Digital Volume':1:80
+		'RX1 Digital Volume':1:67
 		'EAR PA Gain':0:POS_6_DB
 	EndSequence
 
@@ -5954,8 +5948,8 @@ SectionDevice
 		'LINEOUT3 DAC Switch':1:1
 		'LINEOUT1 Volume':1:60
 		'LINEOUT3 Volume':1:60
-		'RX3 Digital Volume':1:67
-		'RX4 Digital Volume':1:67
+		'RX3 Digital Volume':1:75
+		'RX4 Digital Volume':1:75
 		'SPK AMP EN Switch':1:1
 		'FENS Enable':1:1
 	EndSequence
