@@ -3,14 +3,19 @@ etc/agps_rm
 
 # Executable files
 bin/akmd
+bin/awb_camera
+bin/cand
 bin/charging
+bin/ewtzmud
 bin/hci_qcomm_init
+bin/hostapd
+bin/mm-abl-daemon
 bin/mm-qcamera-daemon
 bin/mpdecision
 bin/netmgrd
 bin/netsharing
-bin/rmt_storage
 bin/qmuxd
+bin/rmt_storage
 bin/thermald
 bin/time_daemon
 bin/zchgd
@@ -41,6 +46,9 @@ lib/libmmcamera_rawchipproc.so
 lib/libmmcamera_statsproc30.so
 lib/libmmipl.so
 lib/libmmjpeg.so
+lib/libmmosal.so
+lib/libmmparser.so
+lib/libmmparser_divxdrmlib.so
 lib/liboemcamera.so
 lib/libOlaEngine.so
 lib/libposteffect.so
@@ -56,12 +64,10 @@ lib/libsc-a2xx.so
 
 # GPS
 lib/hw/gps.default.so
-lib/libgps.so
 lib/libgps.utils.so
 lib/libloc_adapter.so
 lib/libloc_api_v02.so
 lib/libloc_eng.so
-lib/libloc_ext.so
 
 # Misc libraries
 lib/libgsl.so
@@ -71,9 +77,6 @@ lib/libOpenVG.so
 # NFC
 lib/libpn544_fw.so
 lib/hw/nfc.elite.so
-
-# OMX
-lib/libOmxVenc.so
 
 # Qualcomm/HTC common libs
 lib/libdiag.so
@@ -98,13 +101,6 @@ lib/libril.so
 
 # Sensors
 lib/hw/sensors.elite.so
-lib/libimu.so
-lib/libmllite.so
-lib/libmlplatform.so
-lib/libmpl.so
-
-# Wifi
-bin/hostapd
 
 # Webkit
 lib/libv8.so
