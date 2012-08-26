@@ -3,13 +3,13 @@ etc/agps_rm
 
 # Executable files
 bin/akmd
-bin/awb_camera
-bin/cand
+#bin/awb_camera
+#bin/cand
 bin/charging
-bin/ewtzmud
+#bin/ewtzmud
 bin/hci_qcomm_init
 bin/hostapd
-bin/mm-abl-daemon
+#bin/mm-abl-daemon
 bin/mm-qcamera-daemon
 bin/mpdecision
 bin/netmgrd
