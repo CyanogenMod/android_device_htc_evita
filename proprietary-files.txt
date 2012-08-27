@@ -3,13 +3,10 @@ etc/agps_rm
 
 # Executable files
 bin/akmd
-#bin/awb_camera
-#bin/cand
+bin/awb_camera
 bin/charging
-#bin/ewtzmud
 bin/hci_qcomm_init
 bin/hostapd
-#bin/mm-abl-daemon
 bin/mm-qcamera-daemon
 bin/mpdecision
 bin/netmgrd
@@ -44,9 +41,6 @@ lib/libmmcamera_rawchipproc.so
 lib/libmmcamera_statsproc30.so
 lib/libmmipl.so
 lib/libmmjpeg.so
-lib/libmmosal.so
-lib/libmmparser.so
-lib/libmmparser_divxdrmlib.so
 lib/liboemcamera.so
 lib/libOlaEngine.so
 lib/libposteffect.so
@@ -58,6 +52,8 @@ lib/egl/libGLESv1_CM_adreno200.so
 lib/egl/libGLESv2_adreno200.so
 lib/egl/libq3dtools_adreno200.so
 lib/libC2D2.so
+lib/libgsl.so
+lib/libOpenVG.so
 lib/libsc-a2xx.so
 
 # GPS
@@ -67,14 +63,15 @@ lib/libloc_adapter.so
 lib/libloc_api_v02.so
 lib/libloc_eng.so
 
-# Misc libraries
-lib/libgsl.so
+# Media libraries
+lib/libmmosal.so
 lib/libmm-color-convertor.so
-lib/libOpenVG.so
+lib/libmmparser.so
+lib/libmmparser_divxdrmlib.so
 
 # NFC
-lib/libpn544_fw.so
 lib/hw/nfc.elite.so
+vendor/firmware/libpn544_fw.so
 
 # Qualcomm/HTC common libs
 lib/libdiag.so
