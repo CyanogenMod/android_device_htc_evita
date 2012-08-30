@@ -5896,7 +5896,7 @@ SectionDevice
 		'SLIM_0_RX Channels':0:One
 		'RX1 MIX1 INP1':0:RX1
 		'DAC1 Switch':1:1
-		'RX1 Digital Volume':1:80
+		'RX1 Digital Volume':1:67
 		'EAR PA Gain':0:POS_6_DB
 	EndSequence
 
