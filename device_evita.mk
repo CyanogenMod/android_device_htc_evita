@@ -93,6 +93,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     lights.evita
 
+# Camera
+PRODUCT_PACKAGES += \
+    camera.msm8960
+
 # NFC
 PRODUCT_PACKAGES += \
     libnfc \
