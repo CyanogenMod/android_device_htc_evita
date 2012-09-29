@@ -99,3 +99,11 @@ lib/libimu.so
 lib/libmllite.so
 lib/libmlplatform.so
 lib/libmpl.so
+
+# WLAN
+etc/firmware/wcnss/wcnss.b00
+etc/firmware/wcnss/wcnss.b01
+etc/firmware/wcnss/wcnss.b02
+etc/firmware/wcnss/wcnss.b04
+etc/firmware/wcnss/wcnss.mdt
+lib/modules/prima_wlan.ko

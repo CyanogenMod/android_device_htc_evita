@@ -104,10 +104,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Torch
 
-# Kernel modules
-PRODUCT_COPY_FILES += \
-    device/htc/evita/modules/prima_wlan.ko:/system/lib/modules/prima_wlan.ko
-
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
