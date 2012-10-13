@@ -172,6 +172,9 @@
 # simlock
 /dev/simlock              0660  radio        radio
 
+# hardware random
+/dev/hw_random            0660  system       system
+
 # evita sensors
 /dev/mpu                  0664  system       system
 /dev/mpuirq               0664  system       system
