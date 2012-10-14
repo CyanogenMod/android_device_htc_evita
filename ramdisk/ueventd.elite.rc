@@ -183,6 +183,12 @@
 # evita NFC
 /dev/pn544                0600  nfc          nfc
 
+# USB peripheral
+/dev/bus/usb/*            0660  root         usb
+/dev/mtp_usb              0660  root         mtp
+/dev/usb_accessory        0660  root         usb
+/dev/usb/lp*              0660  system       usb
+
 # sysfs properties
 /sys/devices/virtual/input/input*   enable      0660  root   input
 /sys/devices/virtual/input/input*   poll_delay  0660  root   input
