@@ -54,7 +54,7 @@ TARGET_SCREEN_WIDTH := 720
 TARGET_PROVIDES_LIBLIGHTS := true
 
 # USB
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun0/file
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
 # Wifi
 WIFI_DRIVER_MODULE_NAME          := prima_wlan
