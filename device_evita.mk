@@ -87,10 +87,6 @@ PRODUCT_COPY_FILES += \
 #PRODUCT_PACKAGES += \
 #    gps.evita \
 
-# Lights
-PRODUCT_PACKAGES += \
-    lights.evita
-
 # NFC
 PRODUCT_PACKAGES += \
     libnfc \
