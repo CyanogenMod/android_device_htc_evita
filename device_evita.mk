@@ -129,3 +129,10 @@ $(call inherit-product-if-exists, vendor/htc/evita/evita-vendor.mk)
 
 # call dalvik heap config
 $(call inherit-product-if-exists, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+
+# Discard inherited values and use our own instead.
+PRODUCT_DEVICE := evita
+PRODUCT_NAME := evita
+PRODUCT_BRAND := htc
+PRODUCT_MODEL := One X
+PRODUCT_MANUFACTURER := HTC
