@@ -28,9 +28,6 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/ramdisk/init.elite.usb.rc:root/init.elite.usb.rc \
     device/htc/evita/ramdisk/ueventd.elite.rc:root/ueventd.elite.rc
 
-# GPS config
-PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/gps.conf
-
 # NFCEE access control
 ifeq ($(TARGET_BUILD_VARIANT),user)
     NFCEE_ACCESS_PATH := device/htc/evita/configs/nfcee_access.xml
