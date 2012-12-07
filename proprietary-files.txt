@@ -4,7 +4,6 @@ etc/agps_rm
 # Executable files
 bin/akmd
 bin/charging
-bin/hci_qcomm_init
 bin/mm-qcamera-daemon
 bin/mpdecision
 bin/netmgrd
