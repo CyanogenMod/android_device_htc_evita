@@ -44,10 +44,6 @@ PRODUCT_COPY_FILES += device/htc/evita/configs/AudioBTID.csv:system/etc/AudioBTI
 PRODUCT_COPY_FILES += \
     device/htc/evita/configs/vold.fstab:system/etc/vold.fstab
 
-# wifi config
-PRODUCT_COPY_FILES += \
-    device/htc/evita/configs/wpa_supplicant.conf:/system/etc/wifi/wpa_supplicant.conf
-
 # Sound configs
 PRODUCT_COPY_FILES += \
     device/htc/evita/dsp/soundimage/srs_bypass.cfg:system/etc/soundimage/srs_bypass.cfg \
