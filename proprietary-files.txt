@@ -58,15 +58,6 @@ lib/libOpenCL.so
 lib/libc2d2_a3xx.so
 lib/libsc-a3xx.so
 
-# GPS
-lib/hw/gps.default.so
-lib/libgps.so
-lib/libgps.utils.so
-lib/libloc_adapter.so
-lib/libloc_api_v02.so
-lib/libloc_eng.so
-lib/libloc_ext.so
-
 # Media libraries
 lib/libmmosal.so
 lib/libmm-color-convertor.so
