@@ -47,10 +47,6 @@ BOARD_PROVIDES_LIBRIL := true
 # USB
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
-# Wifi
-WIFI_DRIVER_MODULE_NAME          := prima_wlan
-WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/prima_wlan.ko"
-
 # cat /proc/emmc
 #dev:        size     erasesize name
 #mmcblk0p23: 000ffa00 00000200 "misc"
