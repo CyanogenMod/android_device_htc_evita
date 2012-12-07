@@ -40,9 +40,6 @@ PRODUCT_COPY_FILES += \
 # HTC BT audio config
 PRODUCT_COPY_FILES += device/htc/evita/configs/AudioBTID.csv:system/etc/AudioBTID.csv
 
-# QC thermald config
-PRODUCT_COPY_FILES += device/htc/msm8960-common/configs/thermald.conf:system/etc/thermald.conf
-
 # vold config
 PRODUCT_COPY_FILES += \
     device/htc/evita/configs/vold.fstab:system/etc/vold.fstab
