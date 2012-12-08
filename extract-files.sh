@@ -1,14 +1,7 @@
 #!/bin/sh
 
-BASE=../../../vendor/htc/evita/proprietary
-rm -rf $BASE/*
+set -e
 
-for FILE in `egrep -v '(^#|^$)' proprietary-files.txt`; do
-  DIR=`dirname $FILE`
-  if [ ! -d $BASE/$DIR ]; then
-    mkdir -p $BASE/$DIR
-  fi
-  adb pull /system/$FILE $BASE/$FILE
-done
-
-./setup-makefiles.sh
+export DEVICE=evita
+export VENDOR=htc
+./../msm8960-common/extract-files.sh $@

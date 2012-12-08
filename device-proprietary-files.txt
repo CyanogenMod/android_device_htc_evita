@@ -1,0 +1,24 @@
+# Executable files
+bin/akmd
+bin/time_daemon
+
+# Camera
+lib/libchromatix_s5k3h2yx_default_video.so
+lib/libchromatix_s5k3h2yx_hdr.so
+lib/libchromatix_s5k3h2yx_hfr.so
+lib/libchromatix_s5k3h2yx_preview.so
+lib/libchromatix_s5k3h2yx_zsl.so
+lib/libchromatix_s5k6a1gx_default_video.so
+lib/libchromatix_s5k6a1gx_preview.so
+lib/libchromatix_s5k6a1gx_zsl.so
+
+# Sensors
+lib/hw/sensors.elite.so
+lib/libimu.so
+lib/libmllite.so
+lib/libmlplatform.so
+lib/libmpl.so
+
+# NFC
+lib/libpn544_fw.so
+lib/hw/nfc.elite.so
