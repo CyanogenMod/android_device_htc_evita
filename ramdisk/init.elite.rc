@@ -107,6 +107,16 @@ on boot
     chown system system /sys/class/leds/flashlight/brightness
     chmod 0666          /sys/class/leds/flashlight/brightness
 
+    # for ST R3GD20
+    chown system system /sys/class/htc_gyro/gyro/enable_device
+    chown system system /sys/class/htc_gyro/gyro/pollrate_ms
+    chown system system /sys/class/htc_gyro/gyro/range
+    chown system system /sys/class/htc_gyro/gyro/enable_polling
+    chown system system /sys/class/htc_gyro/gyro/fifo_samples
+    chown system system /sys/class/htc_gyro/gyro/fifo_mode
+    chown system system /sys/class/htc_gyro/gyro/reg_value
+    chown system system /sys/class/htc_gyro/gyro/reg_addr
+
     # low charge current in voice call
     chown radio radio /sys/class/power_supply/battery/phone_call
     chown radio radio /sys/class/power_supply/battery/network_search
