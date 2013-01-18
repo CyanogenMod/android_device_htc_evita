@@ -2955,7 +2955,7 @@ SectionDevice
 		'SLIM_0_RX Channels':0:One
 		'RX1 MIX1 INP1':0:RX1
 		'DAC1 Switch':1:1
-		'RX1 Digital Volume':1:67
+		'RX1 Digital Volume':1:70
 		'EAR PA Gain':0:POS_6_DB
 	EndSequence
 
@@ -3005,10 +3005,10 @@ SectionDevice
 		'RX4 DSM MUX':0:DSM_INV
 		'LINEOUT1 DAC Switch':1:1
 		'LINEOUT3 DAC Switch':1:1
-		'LINEOUT1 Volume':1:65
-		'LINEOUT3 Volume':1:65
-		'RX3 Digital Volume':1:70
-		'RX4 Digital Volume':1:70
+		'LINEOUT1 Volume':1:70
+		'LINEOUT3 Volume':1:70
+		'RX3 Digital Volume':1:75
+		'RX4 Digital Volume':1:75
 		'SPK AMP EN Switch':1:1
 	EndSequence
 
@@ -3040,8 +3040,8 @@ SectionDevice
 		'HPHR DAC Switch':1:1
 		'RX1 Digital Volume':1:67
 		'RX2 Digital Volume':1:67
-		'HPHL Volume':1:60
-		'HPHR Volume':1:60
+		'HPHL Volume':1:70
+		'HPHR Volume':1:70
 	EndSequence
 
 	DisableSequence
@@ -3249,7 +3249,7 @@ SectionDevice
 		'SLIM_0_TX Channels':0:One
 		'SLIM TX7 MUX':0:DEC5
 		'DEC5 MUX':0:ADC2
-		'DEC5 Volume':1:71
+		'DEC5 Volume':1:75
 		'ADC2 Volume':1:100
 	EndSequence
 
@@ -3272,8 +3272,8 @@ SectionDevice
 		'SLIM_0_TX Channels':0:One
 		'SLIM TX7 MUX':0:DEC6
 		'DEC6 MUX':0:ADC1
-		'DEC6 Volume':1:65
-		'ADC1 Volume':1:75
+		'DEC6 Volume':1:70
+		'ADC1 Volume':1:80
 		'MICBIAS1 CAPLESS Switch':1:1
 	EndSequence
 
