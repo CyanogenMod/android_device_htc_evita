@@ -7,7 +7,6 @@ ro.sf.lcd_density=320
 # RIL properties
 mobiledata.interfaces=rmnet0,rmnet1
 ro.telephony.default_network=9
-ro.telephony.ril_class=HTCQualcommRIL
 DEVICE_PROVISIONED=1
 telephony.lteOnGsmDevice=1
 rild.libpath=/system/lib/libril-qc-qmi-1.so
