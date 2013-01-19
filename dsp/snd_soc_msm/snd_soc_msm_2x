@@ -1357,7 +1357,7 @@ SectionDevice
 		'SLIM_0_RX Channels':0:One
 		'RX1 MIX1 INP1':0:RX1
 		'DAC1 Switch':1:1
-		'RX1 Digital Volume':1:67
+		'RX1 Digital Volume':1:75
 		'EAR PA Gain':0:POS_6_DB
 	EndSequence
 
@@ -1674,8 +1674,8 @@ SectionDevice
 		'SLIM_0_TX Channels':0:One
 		'SLIM TX7 MUX':0:DEC6
 		'DEC6 MUX':0:ADC1
-		'DEC6 Volume':1:65
-		'ADC1 Volume':1:75
+		'DEC6 Volume':1:70
+		'ADC1 Volume':1:100
 		'MICBIAS1 CAPLESS Switch':1:1
 	EndSequence
 
