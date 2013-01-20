@@ -22,11 +22,9 @@ $(call inherit-product, device/htc/msm8960-common/msm8960.mk)
 DEVICE_PACKAGE_OVERLAYS += device/htc/evita/overlay
 
 # Boot ramdisk setup
-PRODUCT_COPY_FILES += \
-    device/htc/evita/ramdisk/fstab.elite:root/fstab.elite \
-    device/htc/evita/ramdisk/init.elite.rc:root/init.elite.rc \
-    device/htc/evita/ramdisk/init.elite.usb.rc:root/init.elite.usb.rc \
-    device/htc/evita/ramdisk/ueventd.elite.rc:root/ueventd.elite.rc
+PRODUCT_PACKAGES += \
+    fstab.elite \
+    init.target.rc
 
 # NFCEE access control
 ifeq ($(TARGET_BUILD_VARIANT),user)
