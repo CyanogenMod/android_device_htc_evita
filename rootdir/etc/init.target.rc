@@ -1,0 +1,35 @@
+on early-init
+    mkdir /storage 0050 system sdcard_r
+    mkdir /storage/sdcard0 0000 system system
+
+    # for backwards compatibility
+    symlink /storage/sdcard0 /sdcard
+    symlink /storage/sdcard0 /mnt/sdcard
+
+    export EXTERNAL_STORAGE /storage/sdcard0
+
+    setprop ro.usb.idproduct.ums 0ced
+    setprop ro.usb.idproduct.rndis 0fb4
+
+on fs
+    # mount all mmc partitions
+    mount_all /fstab.elite
+
+    # for NFC
+    symlink /system/vendor/pittpatt /vendor/pittpatt
+    symlink /system/vendor/firmware/libpn544_fw.so /vendor/firmware/libpn544_fw.so
+
+on boot
+    # create symlink to qcn wpa_supplicant folder
+    symlink /data/misc/wifi/wpa_supplicant /data/system/wpa_supplicant
+    symlink /dev/socket/wpa_wlan0 /data/system/wpa_supplicant/wlan0
+
+# Services start here
+
+service akmd /system/bin/akmd
+    class main
+    user compass
+    group compass misc input
+
+service cand /system/bin/cand
+    user root
