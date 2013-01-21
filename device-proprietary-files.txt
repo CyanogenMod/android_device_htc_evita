@@ -13,7 +13,7 @@ lib/libchromatix_s5k6a1gx_preview.so
 lib/libchromatix_s5k6a1gx_zsl.so
 
 # Sensors
-lib/hw/sensors.elite.so
+lib/hw/sensors.default.so
 lib/libimu.so
 lib/libmllite.so
 lib/libmlplatform.so
@@ -21,4 +21,4 @@ lib/libmpl.so
 
 # NFC
 lib/libpn544_fw.so
-lib/hw/nfc.elite.so
+lib/hw/nfc.default.so
