@@ -71,6 +71,13 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/idc/qwerty.idc:system/usr/idc/qwerty.idc \
     device/htc/evita/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc
 
+# Recovery
+PRODUCT_COPY_FILES += \
+    device/htc/evita/recovery/sbin/choice_fn:recovery/root/sbin/choice_fn \
+    device/htc/evita/recovery/sbin/detect_key:recovery/root/sbin/detect_key \
+    device/htc/evita/recovery/sbin/offmode_charging:recovery/root/sbin/offmode_charging \
+    device/htc/evita/recovery/sbin/power_test:recovery/root/sbin/power_test
+
 # NFC
 PRODUCT_PACKAGES += \
     libnfc \
