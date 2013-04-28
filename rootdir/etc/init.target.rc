@@ -15,7 +15,7 @@ on early-init
 
 on fs
     # mount all mmc partitions
-    mount_all /fstab.elite
+    mount_all /fstab.qcom
 
     # for NFC
     symlink /system/vendor/pittpatt /vendor/pittpatt
