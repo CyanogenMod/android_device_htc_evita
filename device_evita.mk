@@ -35,9 +35,6 @@ endif
 PRODUCT_COPY_FILES += \
     $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
 
-# HTC BT audio config
-PRODUCT_COPY_FILES += device/htc/evita/configs/AudioBTID.csv:system/etc/AudioBTID.csv
-
 # vold config
 PRODUCT_COPY_FILES += \
     device/htc/evita/configs/vold.fstab:system/etc/vold.fstab
@@ -57,11 +54,9 @@ PRODUCT_COPY_FILES += \
 
 # Keylayouts and Keychars
 PRODUCT_COPY_FILES += \
-    device/htc/evita/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
     device/htc/evita/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
     device/htc/evita/keylayout/keypad_8960.kl:system/usr/keylayout/keypad_8960.kl \
     device/htc/evita/keylayout/msm8960-snd-card_Button_Jack.kl:system/usr/keylayout/msm8960-snd-card_Button_Jack.kl \
-    device/htc/evita/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
     device/htc/evita/keylayout/synaptics-rmi-touchscreen.kl:system/usr/keylayout/synaptics-rmi-touchscreen.kl
 
 # Input device config
