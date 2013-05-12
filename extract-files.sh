@@ -4,4 +4,4 @@ set -e
 
 export DEVICE=evita
 export VENDOR=htc
-./../msm8960-common/extract-files.sh $@
+./../s4-common/extract-files.sh $@
