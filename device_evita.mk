@@ -17,7 +17,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # common S4 configs
-$(call inherit-product, device/htc/s4common/s4.mk)
+$(call inherit-product, device/htc/s4-common/s4.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/evita/overlay
 
