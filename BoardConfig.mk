@@ -77,7 +77,6 @@ BOARD_VOLD_MAX_PARTITIONS := 36
 
 # Recovery
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
-TARGET_PREBUILT_RECOVERY_KERNEL := device/htc/evita/recovery/kernel
 TARGET_RECOVERY_FSTAB := device/htc/evita/rootdir/etc/fstab.qcom
 
 # TWRP
