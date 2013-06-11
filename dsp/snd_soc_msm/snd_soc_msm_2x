@@ -291,11 +291,11 @@ SectionVerb
 	Name "HiFi Low Power"
 
 	EnableSequence
-		'SLIMBUS_0_RX Audio Mixer Multimedia3':1:1
+		'SLIMBUS_0_RX Audio Mixer MultiMedia3':1:1
 	EndSequence
 
 	DisableSequence
-		'SLIMBUS_0_RX Audio Mixer Multimedia3':1:0
+		'SLIMBUS_0_RX Audio Mixer MultiMedia3':1:0
 	EndSequence
 
 	# ALSA PCMs
