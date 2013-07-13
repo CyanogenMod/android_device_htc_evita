@@ -14,9 +14,6 @@ on early-init
     setprop ro.usb.idproduct.rndis 0fb4
 
 on fs
-    # mount all mmc partitions
-    mount_all /fstab.qcom
-
     # for NFC
     symlink /system/vendor/pittpatt /vendor/pittpatt
     symlink /system/vendor/firmware/libpn544_fw.so /vendor/firmware/libpn544_fw.so
