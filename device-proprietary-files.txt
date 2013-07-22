@@ -16,5 +16,5 @@ lib/libmlplatform.so
 lib/libmpl.so
 
 # NFC
-lib/libpn544_fw.so
+vendor/firmware/libpn544_fw.so
 lib/hw/nfc.default.so
