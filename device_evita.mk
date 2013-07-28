@@ -36,10 +36,6 @@ endif
 PRODUCT_COPY_FILES += \
     $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
 
-# vold config
-PRODUCT_COPY_FILES += \
-    device/htc/evita/configs/vold.fstab:system/etc/vold.fstab
-
 # Sound configs
 PRODUCT_COPY_FILES += \
     device/htc/evita/dsp/soundimage/srs_bypass.cfg:system/etc/soundimage/srs_bypass.cfg \
