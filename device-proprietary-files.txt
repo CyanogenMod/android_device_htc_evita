@@ -5,6 +5,8 @@ lib/libchromatix_s5k3h2yx_hfr.so
 lib/libchromatix_s5k3h2yx_preview.so
 lib/libchromatix_s5k3h2yx_zsl.so
 lib/libchromatix_s5k6a1gx_default_video.so
+lib/libchromatix_s5k6a1gx_hdr.so
+lib/libchromatix_s5k6a1gx_hfr.so
 lib/libchromatix_s5k6a1gx_preview.so
 lib/libchromatix_s5k6a1gx_zsl.so
 
