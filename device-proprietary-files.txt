@@ -1,3 +1,6 @@
+# Executables
+bin/netmgrd
+
 # Camera
 lib/libchromatix_s5k3h2yx_default_video.so
 lib/libchromatix_s5k3h2yx_hdr.so
@@ -9,6 +12,9 @@ lib/libchromatix_s5k6a1gx_hdr.so
 lib/libchromatix_s5k6a1gx_hfr.so
 lib/libchromatix_s5k6a1gx_preview.so
 lib/libchromatix_s5k6a1gx_zsl.so
+
+# Radio
+lib/libnetmgr.so
 
 # Sensors
 lib/hw/sensors.default.so
