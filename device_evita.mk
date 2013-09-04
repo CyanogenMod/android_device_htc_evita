@@ -49,6 +49,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/evita/dsp/snd_soc_msm/snd_soc_msm_2x:/system/etc/snd_soc_msm/snd_soc_msm_2x
 
+# Media config
+PRODUCT_COPY_FILES += \
+    device/htc/evita/configs/media_profiles.xml:system/etc/media_profiles.xml
+
 # Keylayouts and Keychars
 PRODUCT_COPY_FILES += \
     device/htc/evita/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
