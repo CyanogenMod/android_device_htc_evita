@@ -22,5 +22,5 @@ debug.nfc.se=true
 ro.nfc.port=I2C
 
 # UMS
-persist.sys.usb.config=mass_storage,adb
+persist.sys.usb.config=mtp,adb
 ro.vold.umsdirtyratio=40
