@@ -69,7 +69,8 @@ PRODUCT_COPY_FILES += \
 
 # Recovery
 PRODUCT_COPY_FILES += \
-    device/htc/evita/rootdir/etc/fstab.qcom:recovery/root/fstab.qcom
+    device/htc/evita/rootdir/etc/fstab.qcom:recovery/root/fstab.qcom \
+    device/htc/evita/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # NFC
 PRODUCT_PACKAGES += \
