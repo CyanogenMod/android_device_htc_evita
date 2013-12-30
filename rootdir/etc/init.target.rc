@@ -14,11 +14,6 @@ on init
 
     export EXTERNAL_STORAGE /storage/sdcard0
 
-    setprop ro.usb.idproduct.ums 0ced
-    setprop ro.usb.idproduct.mtp 0f91
-    setprop ro.usb.idproduct.mtp_adb 0dfa
-    setprop ro.usb.idproduct.rndis 0fb4
-
 on fs
     # for NFC
     symlink /system/vendor/pittpatt /vendor/pittpatt
