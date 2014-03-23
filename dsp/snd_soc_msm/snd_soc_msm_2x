@@ -231,6 +231,38 @@ SectionVerb
 EndSection
 
 SectionVerb
+	Name "HiFiUSB PROXY Rx"
+
+	EnableSequence
+		'AFE_PCM_RX Audio Mixer MultiMedia1':1:1
+	EndSequence
+
+	DisableSequence
+		'AFE_PCM_RX Audio Mixer MultiMedia1':1:0
+	EndSequence
+
+	# ALSA PCMs
+	CapturePCM 0
+	PlaybackPCM 0
+
+EndSection
+
+SectionVerb
+	Name "HiFiUSB PROXY Tx"
+
+	EnableSequence
+	EndSequence
+
+	DisableSequence
+	EndSequence
+
+	# ALSA PCMs
+	CapturePCM 0
+	PlaybackPCM 0
+
+EndSection
+
+SectionVerb
 	Name "HiFiHDMI"
 
 	EnableSequence
@@ -530,6 +562,36 @@ SectionVerb
 	CapturePCM 0
 	PlaybackPCM 4
 	ACDBID 0:0
+
+EndSection
+
+SectionVerb
+	Name "HiFi Low PowerUSB PROXY Rx"
+
+	EnableSequence
+		'AFE_PCM_RX Audio Mixer MultiMedia3':1:1
+	EndSequence
+
+	DisableSequence
+		'AFE_PCM_RX Audio Mixer MultiMedia3':1:0
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 4
+
+EndSection
+
+SectionVerb
+	Name "HiFi Low PowerUSB PROXY Tx"
+
+	EnableSequence
+	EndSequence
+
+	DisableSequence
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 4
 
 EndSection
 
@@ -2199,6 +2261,42 @@ SectionDevice
 EndSection
 
 SectionDevice
+	Name "USB PROXY Rx"
+
+	EnableSequence
+	EndSequence
+
+	DisableSequence
+	EndSequence
+
+	ACDBID 45:1
+EndSection
+
+SectionDevice
+	Name "USB PROXY Rx Speaker"
+
+	EnableSequence
+	EndSequence
+
+	DisableSequence
+	EndSequence
+
+	ACDBID 22:1
+EndSection
+
+SectionDevice
+	Name "USB PROXY Tx"
+
+	EnableSequence
+	EndSequence
+
+	DisableSequence
+	EndSequence
+
+	ACDBID 44:1
+EndSection
+
+SectionDevice
 	Name "BT SCO Rx"
 	Comment "BT SCO Rx device"
 
@@ -3588,6 +3686,38 @@ SectionModifier
 	PlaybackPCM 4
 	ACDBID 0:0
 
+EndSection
+
+SectionModifier
+	Name "Play LPAUSB PROXY Rx"
+
+	EnableSequence
+		'AFE_PCM_RX Audio Mixer MultiMedia3':1:1
+	EndSequence
+
+	DisableSequence
+		'AFE_PCM_RX Audio Mixer MultiMedia3':1:0
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 4
+EndSection
+
+SectionModifier
+	Name "Play LPAUSB PROXY Rx Speaker"
+
+	EnableSequence
+		'AFE_PCM_RX Audio Mixer MultiMedia3':1:1
+		'MI2S_RX Audio Mixer MultiMedia3':1:1
+	EndSequence
+
+	DisableSequence
+		'AFE_PCM_RX Audio Mixer MultiMedia3':1:0
+		'MI2S_RX Audio Mixer MultiMedia3':1:0
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 4
 EndSection
 
 SectionModifier
