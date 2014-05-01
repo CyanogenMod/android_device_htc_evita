@@ -24,8 +24,7 @@ DEVICE_PACKAGE_OVERLAYS += device/htc/evita/overlay
 # Boot ramdisk setup
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.target.rc \
-    remount.qcom
+    init.target.rc
 
 # NFCEE access control
 ifeq ($(TARGET_BUILD_VARIANT),user)
