@@ -80,3 +80,4 @@ BOARD_VOLD_MAX_PARTITIONS := 36
 # Recovery
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 TARGET_RECOVERY_FSTAB := device/htc/evita/rootdir/etc/fstab.qcom
+BOARD_RECOVERY_BLDRMSG_OFFSET := 2048
