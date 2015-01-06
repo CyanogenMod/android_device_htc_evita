@@ -31,9 +31,6 @@ service akmd /system/bin/akmd
     user compass
     group compass misc input
 
-service cand /system/bin/cand
-    user root
-
 service setup_fs /system/bin/setup_fs mmcblk0p34
     class core
     user root
