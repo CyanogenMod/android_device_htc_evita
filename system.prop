@@ -20,6 +20,9 @@ debug.nfc.fw_boot_download=false
 debug.nfc.se=true
 ro.nfc.port=I2C
 
+# OTG
+persist.sys.isUsbOtgEnabled=true
+
 # UMS
 persist.sys.usb.config=mtp
 ro.vold.umsdirtyratio=40
