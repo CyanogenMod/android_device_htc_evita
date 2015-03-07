@@ -23,3 +23,6 @@ ro.nfc.port=I2C
 # UMS
 persist.sys.usb.config=mtp
 ro.vold.umsdirtyratio=40
+
+# OTG
+persist.sys.isUsbOtgEnabled=true
