@@ -73,13 +73,6 @@ PRODUCT_PACKAGES += \
     Tag \
     com.android.nfc_extras
 
-# FM radio
-PRODUCT_PACKAGES += \
-    FM2 \
-    FMRecord \
-    libqcomfm_jni \
-    qcom.fmradio
-
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
