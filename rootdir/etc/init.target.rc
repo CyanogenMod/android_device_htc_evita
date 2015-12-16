@@ -1,9 +1,11 @@
 on init
     # for backwards compatibility
     symlink /sdcard /mnt/sdcard
-    symlink /sdcard /storage/sdcard0
+    symlink /sdcard /storage/sdcard
 
 on fs
+    setprop ro.crypto.fuse_sdcard true
+
     # for NFC
     symlink /system/vendor/pittpatt /vendor/pittpatt
     symlink /system/vendor/firmware/libpn544_fw.so /vendor/firmware/libpn544_fw.so
