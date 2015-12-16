@@ -69,6 +69,16 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/evita/bluetooth
 #mmcblk0p24: 00400000 00000200 "modem_st1"
 #mmcblk0p25: 00400000 00000200 "modem_st2"
 
+# Dex pre-optimization
+ifeq ($(HOST_OS),linux)
+ifeq ($(WITH_DEXPREOPT),)
+    WITH_DEXPREOPT := true
+    WITH_DEXPREOPT_COMP := false
+    WITH_DEXPREOPT_PIC := true
+    DONT_DEXPREOPT_PREBUILTS := true
+endif
+endif
+
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
