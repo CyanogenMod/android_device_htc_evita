@@ -1,20 +1,26 @@
 on init
-    # External storage directories
-    mkdir /mnt/media_rw/sdcard0 0700 media_rw media_rw
+    # Storage directories
+    mkdir /mnt/shell/emulated 0700 shell shell
     mkdir /mnt/media_rw/usbdisk 0700 media_rw media_rw
 
-    mkdir /storage/sdcard0 0700 root root
+    mkdir /storage/emulated 0555 root root
     mkdir /storage/usbdisk 0700 root root
 
+    export EXTERNAL_STORAGE /storage/emulated/legacy
+    export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
+    export EMULATED_STORAGE_TARGET /storage/emulated
+
     # for backwards compatibility
-    symlink /storage/sdcard0 /sdcard
-    symlink /storage/sdcard0 /mnt/sdcard
+    symlink /storage/emulated/legacy /sdcard
+    symlink /storage/emulated/legacy /mnt/sdcard
+    symlink /storage/emulated/legacy /storage/sdcard0
+    symlink /mnt/shell/emulated/0 /storage/emulated/legacy
     symlink /storage/usbdisk /usbdisk
     symlink /storage/usbdisk /mnt/usbdisk
 
-    export EXTERNAL_STORAGE /storage/sdcard0
-
 on fs
+    setprop ro.crypto.fuse_sdcard true
+
     # for NFC
     symlink /system/vendor/pittpatt /vendor/pittpatt
     symlink /system/vendor/firmware/libpn544_fw.so /vendor/firmware/libpn544_fw.so
@@ -26,9 +32,8 @@ on boot
 
 # Services start here
 
-service fuse_sdcard0 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard0 /storage/sdcard0
+service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
     class late_start
-    disabled
 
 service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usbdisk /storage/usbdisk
     class late_start
