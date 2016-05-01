@@ -1,12 +1,12 @@
-on init
-    # for backwards compatibility
-    symlink /sdcard /mnt/sdcard
-    symlink /sdcard /storage/sdcard0
-
 on fs
     # for NFC
     symlink /system/vendor/pittpatt /vendor/pittpatt
     symlink /system/vendor/firmware/libpn544_fw.so /vendor/firmware/libpn544_fw.so
+
+on post-fs
+    # for backwards compatibility
+    symlink /sdcard /mnt/sdcard
+    symlink /sdcard /storage/sdcard0
 
 on boot
     # create symlink to qcn wpa_supplicant folder
