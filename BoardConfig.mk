@@ -27,10 +27,8 @@
 # inherit from S4 common
 -include device/htc/s4-common/BoardConfigCommon.mk
 
-# Require bootloader version
-TARGET_BOARD_INFO_FILE ?= device/htc/evita/board-info.txt
-
 # Bootloader
+TARGET_BOARD_INFO_FILE ?= device/htc/evita/board-info.txt
 TARGET_BOOTLOADER_BOARD_NAME := evita
 
 # Kernel
@@ -38,9 +36,6 @@ TARGET_KERNEL_CONFIG := elite_defconfig
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/evita/bluetooth
-
-# Use libril in the device tree
-BOARD_PROVIDES_LIBRIL := true
 
 # cat /proc/emmc
 #dev:        size     erasesize name
@@ -73,6 +68,9 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 2550136320
 BOARD_CACHEIMAGE_PARTITION_SIZE := 268434944
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 131072
+
+# Radio
+BOARD_PROVIDES_LIBRIL := true
 
 # Recovery
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
