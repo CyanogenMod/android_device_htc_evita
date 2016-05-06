@@ -14,20 +14,15 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/htc/evita/full_evita.mk)
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit CM full phone configuration
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Inherit from evita device
+$(call inherit-product, device/htc/evita/device.mk)
 
-# Enhanced NFC
-$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
-
-# Device naming
-PRODUCT_NAME := cm_evita
-
-# Override build props
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT="cingular_us/evita/evita:4.1.1/JRO03C/131981.6:user/release-keys" \
-    BUILD_NUMBER=79936 \
-    PRIVATE_BUILD_DESC="3.18.502.6 CL131981 release-keys" \
-    PRODUCT_NAME=htc_evita
+# Set those variables here to overwrite the inherited values.
+PRODUCT_BRAND := htc
+PRODUCT_DEVICE := evita
+PRODUCT_MANUFACTURER := HTC
+PRODUCT_MODEL := One X
+PRODUCT_NAME := full_evita
