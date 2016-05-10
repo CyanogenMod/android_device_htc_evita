@@ -71,7 +71,8 @@ PRODUCT_PACKAGES += \
     libnfc_jni \
     Nfc \
     Tag \
-    com.android.nfc_extras
+    com.android.nfc_extras \
+    nfc.msm8960
 
 # FM radio
 PRODUCT_PACKAGES += \
