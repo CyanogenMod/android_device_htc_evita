@@ -16,7 +16,3 @@ lib/libimu.so
 lib/libmllite.so
 lib/libmlplatform.so
 lib/libmpl.so
-
-# NFC
-vendor/firmware/libpn544_fw.so
-lib/hw/nfc.default.so
