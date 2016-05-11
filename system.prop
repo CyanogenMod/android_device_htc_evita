@@ -19,6 +19,3 @@ debug.nfc.fw_download=true
 debug.nfc.fw_boot_download=false
 debug.nfc.se=true
 ro.nfc.port=I2C
-
-# UMS
-ro.vold.umsdirtyratio=40
