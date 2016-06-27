@@ -72,6 +72,7 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     libnfc \
     libnfc_jni \
+    libpn544_fw \
     Nfc \
     nfc.msm8960 \
     Tag
